@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth import get_user_model
+from django.utils.html import format_html
+
+from .models import Profile
 
 @admin.register(get_user_model())
 class UserAdmin(BaseUserAdmin):
@@ -38,3 +41,15 @@ class UserAdmin(BaseUserAdmin):
     list_display = ('email', 'first_name', 'last_name', 'is_staff')
     search_fields = ('email', 'first_name', 'last_name')
     ordering = ('email',)
+
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('get_email', 'get_avatar',)
+
+    def get_email(self, obj):
+        return obj.user.email
+    
+    def get_avatar(self, obj):
+        return format_html(
+            '<img src="{}">'.format(obj.avatar.url)
+        )
