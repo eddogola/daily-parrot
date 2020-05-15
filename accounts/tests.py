@@ -40,6 +40,10 @@ class ModelTests(TestCase):
         default_avatar = open(os.path.join(settings.MEDIA_ROOT, 'avatars/default.png'), 'rb').read()
         self.assertEqual(profile.avatar.read(), default_avatar)
         
+        #clean up
+        profile.avatar.delete(save=False)
+        os.rmdir(os.path.join(settings.MEDIA_ROOT, 'avatars/{}'.format(profile.id)))
+        
 class ViewTests(TestCase):
     
     def setUp(self):
@@ -112,3 +116,10 @@ class ViewTests(TestCase):
                                       valid_post_data, follow=True)
         self.assertContains(valid_resp1, 'you may now sign up.')
         
+        #clean up
+        for profile in models.Profile.objects.all():
+            try:
+                profile.avatar.delete(save=False)
+                os.rmdir(os.path.join(settings.MEDIA_ROOT, 'avatars/{}'.format(profile.id)))
+            except:
+                pass
