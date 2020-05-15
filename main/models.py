@@ -3,7 +3,7 @@ from uuid import uuid4
 
 from accounts.models import Profile
 
-class Classification(models.Model):
+class Topic(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, max_length=50)
     
@@ -31,7 +31,7 @@ class BlogPost(models.Model):
     updated = models.DateTimeField(auto_now=True)
     banner = models.ImageField(upload_to='blog-posts-banners')
     author = models.ForeignKey(Profile, on_delete=models.PROTECT, related_name='blog_posts')
-    classification = models.ForeignKey(Classification, on_delete=models.PROTECT,
+    topic = models.ForeignKey(Topic, on_delete=models.PROTECT,
                                        related_name='blog_posts')
     tags = models.ManyToManyField(Tag, related_name='blog_posts')
     active = models.BooleanField(default=True)

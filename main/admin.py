@@ -8,8 +8,8 @@ class BlogPostsInline(admin.TabularInline):
 class TagsInline(admin.TabularInline):
     model = models.BlogPost.tags.through
 
-@admin.register(models.Classification)
-class ClassificationAdmin(admin.ModelAdmin):
+@admin.register(models.Topic)
+class TopicAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'blog_posts',)
     search_fields = ('name', 'slug',)
     prepopulated_fields = {'slug': ('name',)}
@@ -29,7 +29,7 @@ class TagAdmin(admin.ModelAdmin):
     
 @admin.register(models.BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'created', 'updated', 'author', 'classification', 'active',)
+    list_display = ('title', 'slug', 'created', 'updated', 'author', 'topic', 'active',)
     list_editable = ('active',)
     search_fields = ('title', 'body', 'author',)
     list_filter = ('active', 'created', 'updated',)
