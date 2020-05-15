@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #login-illustration{
+    height: 400px;
+    width: 400px;
+}
+
+form {
+    width: 500px;
+}
+
+button.btn.btn-outline-success {
+    width: inherit;
+}
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="row h-100 ml-5">
+    <div class="col-md-7 my-auto">
+        <div>
+            <h1>The world is all about stories</h1>
+            <p>Come and tell us yours :-)
+            </p>
+        </div>
+        {% if form.errors %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                    {{ error }}
+                    <button class="close" role="button" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <!--First name-->
+                        <input type="text" name="first_name" autofocus id="id_first_name" required
+                        class="form-control mb-2 {% if form.first_name.errors %}is-invalid{% endif %}" placeholder="First name">
+                        {% if form.first_name.errors %}
+                            {% for error in form.first_name.errors %}
+                                <span class="invalid-feedback pb-1">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 pl-1">
+                        <!--Last name-->
+                        <input type="text" name="last_name" autofocus id="id_last_name" required
+                        class="form-control mb-2 {% if form.last_name.errors %}is-invalid{% endif %}" placeholder="Last name">
+                        {% if form.last_name.errors %}
+                            {% for error in form.first_name.errors %}
+                                <span class="invalid-feedback pb-1">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <!--Email address-->
+                <input type="email" name="email" autofocus id="id_email" required
+                class="form-control mb-2 {% if form.email.errors %}is-invalid{% endif %}" placeholder="email address">
+                {% if form.email.errors %}
+                    {% for error in form.email.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+                <input type="password" name="password1" id="id_password1" required
+                class="form-control mb-2 {% if form.password1.errors %}is-invalid{% endif %}" placeholder="password">
+                {% if form.password1.errors %}
+                    {% for error in form.password1.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+                <input type="password" name="password2" id="id_password2" required
+                class="form-control mb-2 {% if form.password2.errors %}is-invalid{% endif %}" placeholder="confirm password">
+                {% if form.password2.errors %}
+                    {% for error in form.password2.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-outline-success">Sign Up</button>
+        </form>
+    </div>
+    <div class="col-md-5 text-center my-auto">
+        <img id='login-illustration' src="{% static 'images/ReadingSideDoodle (1).svg' %}" alt="">
+    </div>
+</div>
+{% endblock content %}

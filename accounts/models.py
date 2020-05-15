@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.contrib.auth import get_user_model
 from django.core.files.images import ImageFile
 from django.conf import settings
-from uuid import uuid4
+from uuid import uuid4, uuid4
 import os
 
 class UserManager(BaseUserManager):
@@ -38,7 +38,8 @@ class User(AbstractUser):
     objects = UserManager()
     
 def avatar_path(instance, filename):
-    return 'avatars/{0}/{1}'.format(instance.id, filename)
+    name, ext = os.path.splitext(filename)
+    return 'avatars/{0}/{1}{2}'.format(instance.id, uuid4(), ext)
     
 class Profile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -48,7 +49,7 @@ class Profile(models.Model):
         default=ImageFile(
             open(os.path.join(settings.MEDIA_ROOT, 'avatars/default.png'), 'rb')
         ))
-    bio = models.CharField(max_length=50)
+    bio = models.CharField(max_length=50, blank=True, null=True)
     
     def __str__(self):
         return self.user.email

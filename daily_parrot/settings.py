@@ -110,6 +110,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #Media
 MEDIA_URL = '/uploads/'
@@ -117,3 +119,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 #Authentication
 AUTH_USER_MODEL = 'accounts.User'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+LOGIN_VIEW = 'login'
+
+#Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '74b106b2b19721'
+EMAIL_HOST_PASSWORD = 'ab8a3c75ba56c5'
+EMAIL_PORT = '2525'

@@ -1,0 +1,57 @@
+html, body{
+    height: 100vh;
+    background-color:rgb(248, 248, 248);
+}
+
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+.container-fluid{
+    height: 100vh;
+}
+
+#nav-logo{
+    height:55px;
+    width: 55px;
+}
+
+nav{
+    background-color: #ffffff;
+    box-shadow: 0px 2px 6px #0000003b;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+a.nvl{
+    color: #000000;
+    transition: 300ms;
+    border-bottom: 2px solid transparent;
+}
+
+a.nvl:hover{
+    color: #5c5a5aad;
+    border-color: black;
+}
+
+#nav-brand{
+    transition: 300ms;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+
+#nav-brand:hover{
+    border-color: black;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+#message {
+    width: 250px;
+}

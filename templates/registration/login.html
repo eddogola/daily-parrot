@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<style>
+    #login-illustration{
+    height: 400px;
+    width: 400px;
+}
+
+form {
+    width: inherit;
+}
+
+button.btn.btn-outline-success {
+    width: inherit;
+}
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="row h-100">
+    <div class="col-md-7 text-center my-auto">
+        <img id='login-illustration' src="{% static 'images/student-colour.svg' %}" alt="">
+    </div>
+    <div class="col-md-4 my-auto">
+        <div>
+            <h1>Welcome Back :)</h1>
+            <p>To keep connected with us please login with your personal information by email
+                address and password.
+            </p>
+        </div><br><br>
+        {% if form.errors %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                    {{ error }}
+                    <button class="close" role="button" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="email" name="username" autofocus id="id_username" required
+                class="form-control mb-2 {% if form.errors %}is-invalid{% endif %}" placeholder="email address">
+                <input type="password" name="password" id="id_password" required
+                class="form-control mb-2 {% if form.errors %}is-invalid{% endif %}" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-outline-success">Login</button>
+        </form>
+        <div class="text-secondary">Forgot
+            <a class="text-success" href="{% url 'password_reset' %}">username/password ?</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
