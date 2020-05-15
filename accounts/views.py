@@ -6,8 +6,8 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
 
-from .forms import UserCreationForm
-from .models import Profile
+from accounts.forms import UserCreationForm
+from main.models import Profile
 
 class SignUpView(CreateView):
     form_class = UserCreationForm

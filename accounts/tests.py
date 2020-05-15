@@ -1,11 +1,9 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from django.core.files.images import ImageFile
-from django.conf import settings
 from django.urls import reverse
 import os
 
-from . import models
+from main import models
 
 class ModelTests(TestCase):
     
@@ -23,26 +21,6 @@ class ModelTests(TestCase):
         user.refresh_from_db()
         
         self.assertTrue(user.is_staff and user.is_superuser)
-    
-    def test_profile_model(self):
-        user = get_user_model().objects.create_user(
-            'myuser@email.com', 'testpass123'
-        )
-        profile = models.Profile.objects.create(
-            user=user
-        )
-        user.refresh_from_db()
-        
-        self.assertEqual(user.profile, profile)
-        self.assertEqual(profile.user.email, 'myuser@email.com')
-        
-        #test default avatar
-        default_avatar = open(os.path.join(settings.MEDIA_ROOT, 'avatars/default.png'), 'rb').read()
-        self.assertEqual(profile.avatar.read(), default_avatar)
-        
-        #clean up
-        profile.avatar.delete(save=False)
-        os.rmdir(os.path.join(settings.MEDIA_ROOT, 'avatars/{}'.format(profile.id)))
         
 class ViewTests(TestCase):
     
@@ -116,10 +94,11 @@ class ViewTests(TestCase):
                                       valid_post_data, follow=True)
         self.assertContains(valid_resp1, 'you may now sign up.')
         
-        #clean up
+    def tearDown(self):
         for profile in models.Profile.objects.all():
             try:
                 profile.avatar.delete(save=False)
                 os.rmdir(os.path.join(settings.MEDIA_ROOT, 'avatars/{}'.format(profile.id)))
             except:
                 pass
+        super().tearDown()
