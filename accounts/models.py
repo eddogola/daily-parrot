@@ -50,6 +50,7 @@ class Profile(models.Model):
             open(os.path.join(settings.MEDIA_ROOT, 'avatars/default.png'), 'rb')
         ))
     bio = models.CharField(max_length=50, blank=True, null=True)
+    joined = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.user.email
