@@ -10,6 +10,8 @@ django = "==2.2.8"
 psycopg2 = "*"
 django-environ = "*"
 pillow = "*"
+sorl-thumbnail = "*"
+python-memcached = "*"
 
 [requires]
 python_version = "3.6"

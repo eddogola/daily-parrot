@@ -31,6 +31,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    #Third party
+    'sorl.thumbnail',
+    
     #Local
     'accounts.apps.AccountsConfig',
     'main.apps.MainConfig',
@@ -106,6 +109,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+#Caches
+CACHES = {
+    'default': env.cache(),
+}
 
 
 # Static files (CSS, JavaScript, Images)

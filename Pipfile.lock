@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "091a84dc9b91a29022c1ef08c7223a1e51a6aa653f3b89761a1de688f15ebf49"
+            "sha256": "6ed67233d2fa1f7cf193b9a31c35e6328945dd6202a0617cd4f388b2a05c1663"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -79,12 +79,35 @@
             "index": "pypi",
             "version": "==2.8.5"
         },
+        "python-memcached": {
+            "hashes": [
+                "sha256:4dac64916871bd3550263323fc2ce18e1e439080a2d5670c594cf3118d99b594",
+                "sha256:a2e28637be13ee0bf1a8b6843e7490f9456fd3f2a4cb60471733c7b5d5557e4f"
+            ],
+            "index": "pypi",
+            "version": "==1.59"
+        },
         "pytz": {
             "hashes": [
                 "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed",
                 "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"
             ],
             "version": "==2020.1"
+        },
+        "six": {
+            "hashes": [
+                "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a",
+                "sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"
+            ],
+            "version": "==1.14.0"
+        },
+        "sorl-thumbnail": {
+            "hashes": [
+                "sha256:66771521f3c0ed771e1ce8e1aaf1639ebff18f7f5a40cfd3083da8f0fe6c7c99",
+                "sha256:7162639057dff222a651bacbdb6bd6f558fc32946531d541fc71e10c0167ebdf"
+            ],
+            "index": "pypi",
+            "version": "==12.6.3"
         },
         "sqlparse": {
             "hashes": [
