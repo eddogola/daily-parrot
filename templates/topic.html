@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}{{ topic.name }} - Daily Parrot{% endblock title %}
+
+{% block styles %}
+<style>
+    .blog-entry{
+        margin-bottom: 1px;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: black;
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+    <div class="row ml-4 h-100">
+        <div class="col-md-8">
+            {% for blog_post in topic.blog_posts.all %}
+                {% if forloop.first %}
+                    <div>
+                        <a href="{% url 'blog_post' username=blog_post.author.user.user.username blog_post_slug=blog_post.slug %}">
+                        {% thumbnail blog_post.banner "850x450" crop="center" as im %}
+                        <img class="mx-auto" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                        <h1>{{ blog_post.title }}</h1>
+                        <p class="text-muted">{{ blog_post.tagline }}</p>
+                        <p><a href="{% url 'profile' blog_post.author.user.username %}">
+                            {{ blog_post.author.user.first_name }} 
+                            {{ blog_post.author.user.last_name }}
+                            </a> &middot; 
+                            <span class="text-muted">{{ blog_post.updated|date:"M j" }}</span>
+                        </p>
+                        </a>
+                    </div>
+                    <h4>LATEST</h4><hr>
+                {% else %}
+                    <div class="row blog-entry mb-4">
+                        <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
+                        <div class="col-md-8">
+                            <h3>{{ blog_post.title }}</h3>
+                            <p class="text-muted mb-0">{{ blog_post.tagline }}</p>
+                            <p><a href="{% url 'profile' blog_post.author.user.username %}">
+                                {{ blog_post.author.user.first_name }} 
+                                {{ blog_post.author.user.last_name }}</a>
+                                 &middot; 
+                                <span class="text-muted">{{ blog_post.updated|date:"M j" }}</span>
+                            </p>
+                            
+                        </div>
+                    </a>
+                        <div class="col-md-2 mx-auto my-auto">
+                            {% thumbnail blog_post.banner "152x131" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            {% endthumbnail %}
+                        </div>
+                        
+                    </div>
+                {% endif %}
+                {% empty %}
+                <h1>Nothing here yet...</h1>
+                <p>Be the first to add</p>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h2><b>{{ topic }}</b></h2>
+            <p>{{ topic.tagline }}</p>
+            {% if topic in user.profile.topics.all %}
+                <a href="{% url 'unfollow_topic' topic.slug %}" 
+                class="btn btn-secondary btn-lg" role="button">Unfollow</a>
+            {% else %}
+                <a href="{% url 'follow_topic' topic.slug %}" 
+                class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+            {% endif %}
+            <p class="mt-3">Follow to see more stories about {{ topic }} in your homepage.</p>
+            <h4>POPULAR IN {{ topic|upper }}</h4><hr>
+        </div>
+    </div>
+{% endblock content %}

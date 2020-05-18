@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block styles %}
+<style>
+    .container{
+        width: 700px;
+    }
+    .avatar{
+        border-radius: 100px;
+    }
+    .bio{
+        font-size: 25px;
+    }
+    .card{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 1px 1px 3px #8a86864b;
+    }
+    .card-body{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .card-footer{
+        background-color: white;
+        padding-bottom: 0px;
+        border: 0px;
+    }
+    a, a:hover{
+        color: black;
+        text-decoration: none;
+    }
+</style>
+{% endblock styles %}
+
+{% block title %}
+{{ profile.user.first_name }} {{ profile.user.last_name }} - {{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-4 h-100">
+    <div class="row">
+        <div class="col-md-10">
+            <h1>
+                {{ profile.user.first_name }} {{ profile.user.last_name }}
+                {% if is_following %}
+                    <a href="{% url 'unfollow_profile' profile.user.username %}" 
+                    class="btn btn-secondary btn-lg" role="button">Unfollow</a>
+                {% else %}
+                    {% if user.profile != profile %}
+                        <a href="{% url 'follow_profile' profile.user.username %}" 
+                        class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                    {% endif %}
+                {% endif %}
+            </h1>
+            <p class="text-muted bio mb-1">
+                {% if profile.bio is not None %}
+                    {{ profile.bio }}
+                {% endif %}    
+            </p>
+            <p class="text-muted">Parroter since {{ profile.joined|date:"M j" }}</p>
+            <p class="text-muted">
+                {{ profile.followers.count }} 
+                {% if profile.followers.count == 1 %}
+                    Follower
+                {% else %}
+                    Followers 
+                {% endif %}
+                &middot;
+                {{ profile.following.count }} Following
+            </p>
+        </div>
+        <div class="col-md-2">
+            {% thumbnail profile.avatar "128x128" crop="center" as im %}
+                <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+        </div>
+    </div>
+    {% for blog_post in profile.blog_posts.all %}
+        <div class="card">
+            <div class="card-title pt-3 pl-3">
+                <div class="row">
+                    <div class="col-md-2">
+                        {% thumbnail profile.avatar "40x40" as im %}
+                            <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        {% endthumbnail %}
+                    </div>
+                    <div class="col-md-10">
+                        <h4>{{ profile.user.first_name }} {{ profile.user.last_name }}</h4>
+                        <p class="text-muted">{{ blog_post.updated|date:"M j, Y" }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
+                {% thumbnail blog_post.banner "630x189" crop="center" as im %}
+                    <img class="img-fluid mb-2" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
+                <h4><b>{{ blog_post.title }}</b></h4>
+                <p>{{ blog_post.body|truncatewords:20 }}</p>
+                
+                </a>
+            </div>
+            <div class="card-footer">
+                <p>
+                    <span class="fas fa-eye"></span>
+                    {{ blog_post.views }} views
+                </p>
+            </div>
+        </div>
+        {% empty %}
+        <br><hr>
+        <h2>Nothing here yet...</h2>
+    {% endfor %}
+</div>
+{% endblock content %}

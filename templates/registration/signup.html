@@ -62,6 +62,13 @@ button.btn.btn-outline-success {
                         {% endif %}
                     </div>
                 </div>
+                <input type="text" name="username" autofocus id="id_username" required
+                class="form-control mb-2 {% if form.username.errors %}is-invalid{% endif %}" placeholder="Username">
+                {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
                 <!--Email address-->
                 <input type="email" name="email" autofocus id="id_email" required
                 class="form-control mb-2 {% if form.email.errors %}is-invalid{% endif %}" placeholder="email address">
@@ -70,6 +77,7 @@ button.btn.btn-outline-success {
                         <span class="invalid-feedback pb-1">{{ error }}</span>
                     {% endfor %}
                 {% endif %}
+                <!--Password 1-->
                 <input type="password" name="password1" id="id_password1" required
                 class="form-control mb-2 {% if form.password1.errors %}is-invalid{% endif %}" placeholder="password">
                 {% if form.password1.errors %}
@@ -77,6 +85,7 @@ button.btn.btn-outline-success {
                         <span class="invalid-feedback pb-1">{{ error }}</span>
                     {% endfor %}
                 {% endif %}
+                <!--Password 2-->
                 <input type="password" name="password2" id="id_password2" required
                 class="form-control mb-2 {% if form.password2.errors %}is-invalid{% endif %}" placeholder="confirm password">
                 {% if form.password2.errors %}

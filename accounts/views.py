@@ -22,7 +22,7 @@ class SignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         Profile.objects.create(user=user)
-        messages.success(self.request, 'you may now sign up.')
+        messages.success(self.request, 'you may now log in.')
         return redirect(self.success_url)
     
 class LoginView(BaseLoginView):

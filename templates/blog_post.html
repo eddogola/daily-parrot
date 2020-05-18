@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block title %}
+{{ blogpost.title }} - {{ block.super }}
+{% endblock title %}
+
+{% block styles %}
+<style>
+    #title{
+        font-weight: 550;
+    }
+    #tagline{
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .avatar{
+        border-radius: 100px;
+    }
+    #body{
+        line-height: 2em;
+        word-spacing: 3px;
+    }
+    span.badge.badge-secondary{
+        background-color: rgba(0,0,0,0.05);
+        color:rgba(0,0,0,0.54);
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-size: 15px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 400;
+
+    }
+    #footer{
+        width: 600px;
+    }
+    #written-by{
+        font-size: 18px;
+    }
+    .suggestion{
+        background-color: transparent;
+        border: none;
+    }
+    .suggestion > .card-footer{
+        background-color: transparent;
+    }
+    a, a:hover{
+        color: black;
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+<div class="container">
+    <h1 id="title">{{ blogpost.title }}</h1>
+    <p id="tagline" class="text-muted">{{ blogpost.tagline }}</p>
+    <div class="row">
+        <div class="col-md-1">
+            {% thumbnail blogpost.author.avatar "40x40" as im %}
+                <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+        </div>
+        <div class="col-md-11">
+            <p class="mb-1">{{ blogpost.author.user.first_name }} {{ blogpost.author.user.last_name }}  
+                {% if is_following %}
+                    <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
+                    class="btn btn-secondary btn-lg" role="button">Unfollow</a>
+                {% else %}
+                    <a href="{% url 'follow_profile' blogpost.author.user.username %}" 
+                    class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                {% endif %}
+            </p>
+            <p class="text-muted mt-0">{{ blogpost.updated|date:"M j, Y" }}</p>
+            
+        </div>
+    </div>
+    {% thumbnail blogpost.banner "1110x500" crop="center" as im %}
+        <img class="img-fluid mb-2" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+    {% endthumbnail %}
+    <p id="body">{{ blogpost.body }}</p>
+    <div>
+        {% for tag in blogpost.tags.all %}
+            <span class="badge badge-secondary mr-2">{{ tag|capfirst }}</span>
+        {% endfor %}
+    </div><hr>
+    <div>
+        <div class="row mx-auto" id="footer">
+            <div class="col-md-2 my-auto">
+                {% thumbnail blogpost.author.avatar "80x80" as im %}
+                    <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
+            </div>
+            <div class="col-md-5">
+                <h4 id="written-by" class="text-muted">WRITTEN BY</h4>
+                <p class="mb-1">
+                    {{ blogpost.author.user.first_name }} {{ blogpost.author.user.last_name }}
+                </p>
+                <p class="text-muted mt-0">{{ blogpost.updated|date:"M j, Y" }}</p>
+            </div>
+            <div class="col-auto ml-auto">
+                {% if is_following %}
+                    <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
+                    class="btn btn-secondary btn-lg" role="button">Unfollow</a>
+                {% else %}
+                    <a href="{% url 'follow_profile' blogpost.author.user.username %}" 
+                    class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div>
+        <h4>More From Daily Parrot</h4>
+        <div class="row">
+        {% for suggestion in topic_suggestions %}
+                <div class="col-md-4">
+                    <a href="{% url 'blog_post' username=suggestion.author.user.username blog_post_slug=suggestion.slug %}">
+                    <div class="card suggestion mb-4">
+                        <div class="card-title pt-3 pl-3">
+                            <p>More from {{ suggestion.topic }}</p>
+                        </div>
+                        <div class="card-body p-0">
+                            {% thumbnail suggestion.banner "376x250" crop="center" as im %}
+                                <img class="img-fluid" src="{{ im.url }}" 
+                                width="{{ im.width }}" height="{{ im.height }}">
+                            {% endthumbnail %}
+                        </div>
+                        <div class="card-footer">
+                            <h2>{{ suggestion.title }}</h2>
+                            <div class="row h-100">
+                                <div class="col-md-3 pr-0 mx-auto">
+                                    <a class="text-dark" href="{% url 'profile' suggestion.author.user.username %}">
+                                    {% thumbnail suggestion.author.avatar "40x40" as im %}
+                                        <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}"
+                                         height="{{ im.height }}">
+                                    {% endthumbnail %}
+                                    </a>
+                                </div>
+                                <div class="col-md-8 pl-0 mx-auto my-auto">
+                                    <p><a class="text-dark" href="{% url 'profile' suggestion.author.user.username %}">
+                                        {{ suggestion.author.user.first_name }} 
+                                        {{ suggestion.author.user.last_name }}
+                                        </a> &middot; 
+                                        <span class="text-muted">{{ suggestion.updated|date:"M j" }}</span>
+                                    </p>
+                                </div>
+                            </div>                
+                        </div>
+                    </div>
+                    </a>
+                </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

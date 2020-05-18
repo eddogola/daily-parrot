@@ -1,10 +1,14 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from sorl.thumbnail import get_thumbnail
 
 from main import models
 
 class BlogPostsInline(admin.TabularInline):
     model = models.BlogPost
+    
+class TopicsInline(admin.TabularInline):
+    model = models.Topic
 
 class BlogPostsTagsInline(admin.TabularInline):
     model = models.BlogPost.tags.through
@@ -14,7 +18,7 @@ class ProfileTopicsInline(admin.TabularInline):
 
 @admin.register(models.Topic)
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('name', 'tagline','slug', 'blog_posts', 'get_banner',)
+    list_display = ('name', 'tagline','slug', 'classification','blog_posts', 'topic_banner',)
     search_fields = ('name', 'slug',)
     prepopulated_fields = {'slug': ('name',)}
     
@@ -26,9 +30,10 @@ class TopicAdmin(admin.ModelAdmin):
         blog_posts_count = obj.blog_posts.count()
         return blog_posts_count
     
-    def get_banner(self, obj):
+    def topic_banner(self, obj):
+        banner = get_thumbnail(obj.banner, '152x131')
         return format_html(
-            "<img src='{}'>".format(obj.banner.url)
+            "<img src='{}'>".format(banner.url)
         )
     
 @admin.register(models.Tag)
@@ -53,13 +58,14 @@ class BlogPostAdmin(admin.ModelAdmin):
     )
     
     def get_banner(self, obj):
+        banner = get_thumbnail(obj.banner, '152x131')
         return format_html(
-            "<img src='{}'>".format(obj.banner.url)
+            "<img src='{}'>".format(banner.url)
         )
 
 @admin.register(models.Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('get_email', 'get_avatar',)
+    list_display = ('get_email', 'avatar_thumbnail',)
     inlines = (
         BlogPostsInline,
         ProfileTopicsInline,
@@ -68,7 +74,15 @@ class ProfileAdmin(admin.ModelAdmin):
     def get_email(self, obj):
         return obj.user.email
     
-    def get_avatar(self, obj):
+    def avatar_thumbnail(self, obj):
+        thumbnail = get_thumbnail(obj.avatar, "142x131")
         return format_html(
-            '<img src="{}">'.format(obj.avatar.url)
+            '<img src="{}">'.format(thumbnail.url)
         )
+
+@admin.register(models.Classification)
+class ClassificationAdmin(admin.ModelAdmin):
+    search_fields = ('name',)
+    inlines = (
+        TopicsInline,
+    )
