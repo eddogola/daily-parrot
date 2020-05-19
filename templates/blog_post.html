@@ -56,18 +56,25 @@
     <p id="tagline" class="text-muted">{{ blogpost.tagline }}</p>
     <div class="row">
         <div class="col-md-1">
-            {% thumbnail blogpost.author.avatar "40x40" as im %}
+            <a href="{% url 'profile' blogpost.author.user.username %}">
+            {% thumbnail blogpost.author.avatar "40x40" crop="center" as im %}
                 <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
             {% endthumbnail %}
+            </a>
         </div>
         <div class="col-md-11">
-            <p class="mb-1">{{ blogpost.author.user.first_name }} {{ blogpost.author.user.last_name }}  
-                {% if user.is_authenticated and is_following %}
-                    <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
-                    class="btn btn-secondary btn-lg" role="button">Unfollow</a>
-                {% else %}
-                    <a href="{% url 'follow_profile' blogpost.author.user.username %}" 
-                    class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+            <p class="mb-1">
+                <a href="{% url 'profile' blogpost.author.user.username %}">
+                    {{ blogpost.author.user.first_name }} {{ blogpost.author.user.last_name }}
+                </a>
+                {% if blogpost.author != user.profile %}
+                    {% if user.is_authenticated and is_following %}
+                        <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
+                        class="btn btn-secondary btn-lg" role="button">Unfollow</a>
+                    {% else %}
+                        <a href="{% url 'follow_profile' blogpost.author.user.username %}" 
+                        class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                    {% endif %}
                 {% endif %}
             </p>
             <p class="text-muted mt-0">{{ blogpost.updated|date:"M j, Y" }}</p>
@@ -88,24 +95,30 @@
     <div>
         <div class="row mx-auto" id="footer">
             <div class="col-md-2 my-auto">
-                {% thumbnail blogpost.author.avatar "80x80" as im %}
+                <a href="{% url 'profile' blogpost.author.user.username %}">
+                {% thumbnail blogpost.author.avatar "80x80" crop="center" as im %}
                     <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                 {% endthumbnail %}
+                </a>
             </div>
             <div class="col-md-5">
                 <h4 id="written-by" class="text-muted">WRITTEN BY</h4>
                 <p class="mb-1">
+                    <a href="{% url 'profile' blogpost.author.user.username %}">
                     {{ blogpost.author.user.first_name }} {{ blogpost.author.user.last_name }}
+                    </a>
                 </p>
                 <p class="text-muted mt-0">{{ blogpost.updated|date:"M j, Y" }}</p>
             </div>
             <div class="col-auto ml-auto">
-                {% if is_following %}
-                    <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
-                    class="btn btn-secondary btn-lg" role="button">Unfollow</a>
-                {% else %}
-                    <a href="{% url 'follow_profile' blogpost.author.user.username %}" 
-                    class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                {% if blogpost.author != user.profile %}
+                    {% if is_following %}
+                        <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
+                        class="btn btn-secondary btn-lg" role="button">Unfollow</a>
+                    {% else %}
+                        <a href="{% url 'follow_profile' blogpost.author.user.username %}" 
+                        class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -131,7 +144,7 @@
                             <div class="row h-100">
                                 <div class="col-md-3 pr-0 mx-auto">
                                     <a class="text-dark" href="{% url 'profile' suggestion.author.user.username %}">
-                                    {% thumbnail suggestion.author.avatar "40x40" as im %}
+                                    {% thumbnail suggestion.author.avatar "40x40" crop="center" as im %}
                                         <img class="img-fluid avatar" src="{{ im.url }}" width="{{ im.width }}"
                                          height="{{ im.height }}">
                                     {% endthumbnail %}

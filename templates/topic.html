@@ -39,7 +39,9 @@
                         </p>
                         </a>
                     </div>
-                    <h4>LATEST</h4><hr>
+                    {% if not forloop.first and forloop.last %}
+                        <h4>LATEST</h4><hr>
+                    {% endif %}
                 {% else %}
                     <div class="row blog-entry mb-4">
                         <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
@@ -77,9 +79,9 @@
             {% else %}
                 <a href="{% url 'follow_topic' topic.slug %}" 
                 class="btn btn-outline-secondary btn-lg" role="button">Follow</a>
+                <p class="mt-3">Follow to see more stories about {{ topic }} in your homepage.</p>
             {% endif %}
-            <p class="mt-3">Follow to see more stories about {{ topic }} in your homepage.</p>
-            <h4>POPULAR IN {{ topic|upper }}</h4><hr>
+            <h4 class="mt-4 mb-2">POPULAR IN {{ topic|upper }}</h4><hr>
         </div>
     </div>
 {% endblock content %}
