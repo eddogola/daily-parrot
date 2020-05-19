@@ -56,7 +56,7 @@ button.btn.btn-outline-success {
                         <input type="text" name="last_name" autofocus id="id_last_name" required
                         class="form-control mb-2 {% if form.last_name.errors %}is-invalid{% endif %}" placeholder="Last name">
                         {% if form.last_name.errors %}
-                            {% for error in form.first_name.errors %}
+                            {% for error in form.last_name.errors %}
                                 <span class="invalid-feedback pb-1">{{ error }}</span>
                             {% endfor %}
                         {% endif %}

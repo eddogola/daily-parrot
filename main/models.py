@@ -7,14 +7,14 @@ from random import sample
 import os
 
 class Tag(models.Model):
-    name = models.CharField(max_length=15)
+    name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, max_length=15)
     
     def __str__(self):
         return self.name
     
 class Classification(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=50)
     
     class Meta:
         ordering = ['id']
@@ -25,7 +25,7 @@ class Classification(models.Model):
 class Topic(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, max_length=50)
-    tagline = models.CharField(max_length=20, null=True)
+    tagline = models.CharField(max_length=50, null=True)
     classification = models.ForeignKey(Classification, on_delete=models.PROTECT,
                                        related_name='topics')
     banner = models.ImageField(upload_to='topic-banners', null=True)
@@ -53,7 +53,7 @@ class Profile(models.Model):
         default=ImageFile(
             open(os.path.join(settings.MEDIA_ROOT, 'avatars/default.png'), 'rb')
         ))
-    bio = models.CharField(max_length=50, blank=True, null=True)
+    bio = models.CharField(max_length=200, blank=True, null=True)
     joined = models.DateTimeField(auto_now_add=True)
     topics = models.ManyToManyField(Topic, related_name='profiles')
     
@@ -110,8 +110,8 @@ class BlogPostManager(models.Manager):
 class BlogPost(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4(), editable=False)
     slug = models.SlugField()
-    title = models.CharField(max_length=140, unique=True)
-    tagline = models.CharField(max_length=50, null=True)
+    title = models.CharField(max_length=200, unique=True)
+    tagline = models.CharField(max_length=100, null=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

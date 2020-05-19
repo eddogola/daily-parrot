@@ -12,6 +12,7 @@ django-environ = "*"
 pillow = "*"
 sorl-thumbnail = "*"
 python-memcached = "*"
+django-tinymce = "*"
 
 [requires]
 python_version = "3.6"

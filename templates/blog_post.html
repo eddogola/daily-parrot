@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-11">
             <p class="mb-1">{{ blogpost.author.user.first_name }} {{ blogpost.author.user.last_name }}  
-                {% if is_following %}
+                {% if user.is_authenticated and is_following %}
                     <a href="{% url 'unfollow_profile' blogpost.author.user.username %}" 
                     class="btn btn-secondary btn-lg" role="button">Unfollow</a>
                 {% else %}
@@ -77,7 +77,9 @@
     {% thumbnail blogpost.banner "1110x500" crop="center" as im %}
         <img class="img-fluid mb-2" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
     {% endthumbnail %}
-    <p id="body">{{ blogpost.body }}</p>
+    <p id="body">
+        {{ blogpost.body|safe }}
+    </p>
     <div>
         {% for tag in blogpost.tags.all %}
             <span class="badge badge-secondary mr-2">{{ tag|capfirst }}</span>

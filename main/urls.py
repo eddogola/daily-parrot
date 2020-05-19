@@ -4,6 +4,8 @@ from django.views.generic import TemplateView
 from main import views
 
 urlpatterns = [
+    path('profile/edit/', views.EditProfileView.as_view(), name='edit_profile'),
+    path('add/', views.BlogPostCreateView.as_view(), name='blog_post_create'),
     path('@<str:username>/follow/', views.follow_profile, name='follow_profile'),
     path('@<str:username>/unfollow/', views.unfollow_profile, name='unfollow_profile'),
     path('topic/<slug:topic_slug>/unfollow/', views.unfollow_topic, name='unfollow_topic'),

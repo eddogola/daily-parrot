@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from sorl.thumbnail import get_thumbnail
 
-from main import models
+from main import models, forms
 
 class BlogPostsInline(admin.TabularInline):
     model = models.BlogPost
@@ -56,6 +56,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     inlines = (
         BlogPostsTagsInline,
     )
+    form = forms.BlogPostForm
     
     def get_banner(self, obj):
         banner = get_thumbnail(obj.banner, '152x131')

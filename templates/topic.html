@@ -25,7 +25,7 @@
             {% for blog_post in topic.blog_posts.all %}
                 {% if forloop.first %}
                     <div>
-                        <a href="{% url 'blog_post' username=blog_post.author.user.user.username blog_post_slug=blog_post.slug %}">
+                        <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
                         {% thumbnail blog_post.banner "850x450" crop="center" as im %}
                         <img class="mx-auto" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                         {% endthumbnail %}
