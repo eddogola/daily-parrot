@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404, redirect
 from django.utils.text import slugify
 from django.urls import reverse, reverse_lazy
+from random import sample
 
 from main import models, forms
 
@@ -31,9 +32,10 @@ class ProfileDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        is_following = self.request.user.profile.\
-            is_following_profile(self.object)
-        ctx['is_following'] = is_following
+        if self.request.user.is_authenticated:
+            is_following = self.request.user.profile.\
+                is_following_profile(self.object)
+            ctx['is_following'] = is_following
         return ctx
     
 class BlogPostDetailView(DetailView):
@@ -47,9 +49,14 @@ class BlogPostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         topic = self.object.topic
-        #suggestions = models.BlogPost.objects.topic_suggestions(topic, 3).\
-        #    exclude(self.object)
-        #ctx['topic_suggestions'] = suggestions
+        try:
+            suggestions = models.BlogPost.objects.topic_suggestions(topic, 3).\
+                exclude(id=self.object.id)
+            ctx['topic_suggestions'] = suggestions
+        except AttributeError:
+            topics = models.Topic.objects.exclude(id=topic.id).all()
+            topics = sample(list(topics), 3)
+            ctx['topics'] = topics
         if self.request.user.is_authenticated:
             is_following = self.request.user.profile.\
             is_following_profile(self.object.author)

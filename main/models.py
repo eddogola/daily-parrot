@@ -32,6 +32,13 @@ class Topic(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def get_popular(self):
+        #get topic blog posts
+        blog_posts = BlogPost.objects.filter(topic=self)
+        #order and limit queryset
+        blog_posts = blog_posts.order_by('thumbs_up')[:5]
+        return blog_posts
 
 class Follow(models.Model):
     follower = models.ForeignKey('Profile', related_name='following', on_delete=models.CASCADE)
@@ -104,8 +111,10 @@ class BlogPostManager(models.Manager):
     
     def topic_suggestions(self, topic, max=3):
         qs = self.active().filter(topic=topic)
-        qs = sample(list(qs.all()), max)
-        return qs
+        if qs.count() >=4:
+            qs = sample(list(qs.all()), max)
+            return qs
+        return None
 
 class BlogPost(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4(), editable=False)
@@ -121,7 +130,8 @@ class BlogPost(models.Model):
                                        related_name='blog_posts')
     tags = models.ManyToManyField(Tag, related_name='blog_posts')
     active = models.BooleanField(default=True)
-    views = models.PositiveIntegerField()
+    thumbs_up = models.PositiveIntegerField()
+    thumbs_down = models.PositiveIntegerField()
     
     objects = BlogPostManager()
     
