@@ -47,6 +47,10 @@
     a, a:hover{
         color: black;
     }
+    .thumbs:hover {
+        text-decoration: none;
+        color: #00000094;
+    }
 </style>
 {% endblock styles %}
 
@@ -109,6 +113,16 @@
                     </a>
                 </p>
                 <p class="text-muted mt-0">{{ blogpost.updated|date:"M j, Y" }}</p>
+                <a href="{% url 'thumbs' blog_post_slug=blogpost.slug action='UP' %}" 
+                class="mr-4 thumbs">
+                    <span class="fas fa-thumbs-up"></span>
+                    {{ blogpost.thumbs_up }}
+                </a>
+                <a href="{% url 'thumbs' blog_post_slug=blogpost.slug action='DOWN' %}" 
+                class="ml-4 thumbs">
+                    <span class="fas fa-thumbs-down"></span>
+                    {{ blogpost.thumbs_down }}
+                </a>
             </div>
             <div class="col-auto ml-auto">
                 {% if blogpost.author != user.profile %}

@@ -4,12 +4,12 @@ from tinymce.widgets import TinyMCE
 from main import models
 
 class BlogPostForm(forms.ModelForm):
-    
+       
     body = forms.CharField(widget=TinyMCE(attrs={'cols':80,'rows':30}))
     
     class Meta:
         model = models.BlogPost
-        exclude = []
+        exclude = ['slug', 'author', 'thumbs_up', 'thumbs_down']
         
 class ProfileForm(forms.Form):
     first_name = forms.CharField()

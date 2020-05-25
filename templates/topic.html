@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
+{% load static %}
 
 {% block title %}{{ topic.name }} - Daily Parrot{% endblock title %}
 
@@ -22,10 +23,23 @@
 </style>
 {% endblock styles %}
 
+{% block scripts %}
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        var infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0]
+        });
+    });
+</script>
+{% endblock scripts %}
+
 {% block content %}
     <div class="row ml-4 h-100">
         <div class="col-md-8">
-            {% for blog_post in topic.blog_posts.all %}
+            <div class="infinite-container">
+            {% for blog_post in posts %}
                 {% if forloop.first %}
                     <div>
                         <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
@@ -46,7 +60,7 @@
                         <h4>LATEST</h4><hr>
                     {% endif %}
                 {% else %}
-                    <div class="row blog-entry mb-4">
+                    <div class="row blog-entry mb-4 infinite-item">
                         <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
                         <div class="col-md-8">
                             <h3>{{ blog_post.title }}</h3>
@@ -72,6 +86,12 @@
                 <h1>Nothing here yet...</h1>
                 <p>Be the first to add</p>
             {% endfor %}
+            </div>
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}" class="infinite-more-link">
+                    <div class="d-flex mx-auto spinner-border"></div>
+                </a>
+            {% endif %}
         </div>
         <div class="col-md-4">
             <h2><b>{{ topic }}</b></h2>

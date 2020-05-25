@@ -7,3 +7,4 @@ class UserCreationForm(BaseUserCreationForm):
         model = get_user_model()
         fields = ('first_name', 'last_name', 'username','email',
                    'password1', 'password2')
+        

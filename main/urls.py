@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from main import views
 
 urlpatterns = [
+    path('<slug:blog_post_slug>/thumbs/<str:action>/', views.thumbs, name='thumbs'),
     path('profile/edit/', views.EditProfileView.as_view(), name='edit_profile'),
     path('add/', views.BlogPostCreateView.as_view(), name='blog_post_create'),
     path('@<str:username>/follow/', views.follow_profile, name='follow_profile'),
@@ -14,5 +15,5 @@ urlpatterns = [
     path('@<str:username>/<slug:blog_post_slug>', views.BlogPostDetailView.as_view(), name='blog_post'),
     path('topic/<slug:topic_slug>/', views.TopicDetailView.as_view(), name='topic'),
     path('topics/', views.TopicsListView.as_view(), name='topics'),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('', views.HomePageView.as_view(), name='home'),
 ]

@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
     {{ form.media }}
     <style>
         #submit-btn{
@@ -8,6 +10,14 @@
         }
     </style>
 {% endblock styles %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function() {
+        $('.mdb-select').materialSelect();
+    });
+</script>
+{% endblock scripts %}
 
 {% block content %}
 <form method="post" enctype="multipart/form-data">
@@ -20,23 +30,47 @@
         </div>
         <div class="col-md-3 ml-auto">
             <div class="form-group">
-                <input type="text" name="title" id="id_title" class="form-control mb-2"
+                <input type="text" name="title" id="id_title" class="form-control mb-2 
+                {% if form.title.errors %}is-invalid{% endif %}"
                 placeholder="Title" required>
-                <input type="text" name="tagline" id="id_tagline" class="form-control mb-2"
+                {% if form.title.errors %}
+                    {% for error in form.title.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+                <input type="text" name="tagline" id="id_tagline" class="form-control mb-2 
+                {% if form.tagline.errors %}is-invalid{% endif %}"
                 placeholder="Tagline" required>
-                <select name="topic" required id="id_topic" class="custom-select mb-2">
+                {% if form.tagline.errors %}
+                    {% for error in form.tagline.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+                <select name="topic" required id="id_topic" class="custom-select mb-2 
+                {% if form.topic.errors %}is-invalid{% endif %}">
                     <option value="" selected>Choose Topic</option>
                     {% for topic in topics %}
                         <option value="{{ topic.id }}">{{ topic.name }}</option>
                     {% endfor %}
                 </select>
-                <select name="tags" required id="id_tags" class="custom-select mb-2">
-                    <option value="" selected>Choose Tag</option>
+                {% if form.topic.errors %}
+                    {% for error in form.topic.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+                <select name="tags" required id="id_tags" class="mdb-select mb-2 
+                {% if form.first_name.errors %}is-invalid{% endif %}" multiple>
+                    <option value="" disabled selected>Choose Tag</option>
                     {% for tag in tags %}
                         <option value="{{ tag.id }}">{{ tag.name }}</option>
                     {% endfor %}
                 </select>
-                <div class="input-group mb-2">
+                {% if form.tags.errors %}
+                    {% for error in form.tags.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
+                <div class="input-group mb-2 {% if form.avatar.errors %}is-invalid{% endif %}">
                     <div class="input-group-prepend">
                         <div class="input-group-text">Upload</div>
                     </div>
@@ -46,6 +80,11 @@
                         <label for="id_banner" class="custom-file-label">Choose banner</label>
                     </div>
                 </div>
+                {% if form.avatar.errors %}
+                    {% for error in form.avatar.errors %}
+                        <span class="invalid-feedback pb-1">{{ error }}</span>
+                    {% endfor %}
+                {% endif %}
                 <div class="row">
                     <button type="submit" id="submit-btn" class="btn btn-outline-success 
                     btn-lg mx-auto">Post</button>

@@ -1,5 +1,107 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
+{% load static %}
+
+{% block title %}Daily Parrot{% endblock title %}
+
+{% block styles %}
+<style>
+    .avatar{
+        border-radius: 100px;
+    }
+    .blog-entry{
+        margin-bottom: 1px;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        text-decoration: none;
+        color: black;
+    }
+    .popular-row{
+        border-bottom: 1px solid #0000001e;
+    }
+    .infinite-item{
+        padding-bottom: 15px;
+        border-bottom: 1px solid #0000001e;
+    }
+    #topic{
+        color: #00000059;
+    }
+</style>
+{% endblock styles %}
+
+{% block scripts %}
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        var infinite = new Waypoint.Infinite({
+            element: $('.infinite-container')[0]
+        });
+    });
+</script>
+{% endblock scripts %}
 
 {% block content %}
-
+    <div class="row ml-4 h-100">
+        <div class="col-md-10">
+            <h3>LATEST ON DAILY PARROT</h3><hr>
+            <div class="infinite-container">
+            {% for blog_post in posts %}
+                    <div class="row blog-entry mb-4 infinite-item">
+                        <a href="{% url 'blog_post' username=blog_post.author.user.username blog_post_slug=blog_post.slug %}">
+                        <div class="col-md-8">
+                            <p id="topic">{{ blog_post.topic|upper }}</p>
+                            <h3>{{ blog_post.title }}</h3>
+                            <p class="text-muted mb-0">{{ blog_post.tagline }}</p>
+                            <p><a href="{% url 'profile' blog_post.author.user.username %}">
+                                {{ blog_post.author.user.first_name }} 
+                                {{ blog_post.author.user.last_name }}</a>
+                                 &middot; 
+                                <span class="text-muted">{{ blog_post.updated|date:"M j" }}</span>
+                            </p>
+                        </div>
+                    </a>
+                        <div class="col-md-2 ml-auto my-auto">
+                            {% thumbnail blog_post.banner "152x131" crop="center" as im %}
+                            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            {% endthumbnail %}
+                        </div>
+                    </div>
+                {% empty %}
+                <h1>Nothing here yet...</h1>
+                <a href="{% url 'blog_post_create' %}">Be the first to add</a>
+            {% endfor %}
+            </div>
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}" class="infinite-more-link">
+                    <div class="d-flex mx-auto spinner-border"></div>
+                </a>
+            {% endif %}
+        </div>
+        <div class="col-md-2">
+            <h3>top authors</h3>
+            {% for author in authors %}
+                <div class="row mb-2">
+                    <div class="col-auto">
+                        <a href="{% url 'profile' username=author.user.username %}">
+                        {% thumbnail author.avatar "40x40" crop="center" as im %}
+                            <img src="{{ im.url }}" class="avatar" height="{{ im.height }}" width="{{ im.width }}">
+                        {% endthumbnail %}
+                        </a>
+                    </div>
+                    <div class="col-auto">
+                        <a href="{% url 'profile' username=author.user.username %}">
+                        {{ author.user.first_name }} {{ author.user.last_name }}
+                        </a>
+                    </div>
+                    </a>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}

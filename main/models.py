@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.files.images import ImageFile
 from django.conf import settings
+from django.urls import reverse_lazy
 from uuid import uuid4
 from random import sample
 import os
@@ -63,6 +64,7 @@ class Profile(models.Model):
     bio = models.CharField(max_length=200, blank=True, null=True)
     joined = models.DateTimeField(auto_now_add=True)
     topics = models.ManyToManyField(Topic, related_name='profiles')
+    confirmed = models.BooleanField(default=False)
     
     def is_following_topic(self, topic):
         return topic in self.topics.all()
@@ -101,6 +103,19 @@ class Profile(models.Model):
             return True
         return False
     
+    def get_following_posts(self):
+        topic_posts = list()
+        for topic in self.topics.all():
+            posts = topic.blog_posts.exclude(author=self).all()
+            topic_posts += posts
+        profile_posts = list()
+        for follow in self.following.all():
+            profile = follow.following
+            posts = profile.blog_posts.all()
+            profile_posts += posts
+        posts = list(set(topic_posts + profile_posts))
+        return posts
+    
     def __str__(self):
         return self.user.email
 
@@ -119,8 +134,8 @@ class BlogPostManager(models.Manager):
 class BlogPost(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4(), editable=False)
     slug = models.SlugField()
-    title = models.CharField(max_length=200, unique=True)
-    tagline = models.CharField(max_length=100, null=True)
+    title = models.CharField(max_length=400, unique=True)
+    tagline = models.CharField(max_length=400, null=True)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -130,8 +145,8 @@ class BlogPost(models.Model):
                                        related_name='blog_posts')
     tags = models.ManyToManyField(Tag, related_name='blog_posts')
     active = models.BooleanField(default=True)
-    thumbs_up = models.PositiveIntegerField()
-    thumbs_down = models.PositiveIntegerField()
+    thumbs_up = models.PositiveIntegerField(default=0)
+    thumbs_down = models.PositiveIntegerField(default=0)
     
     objects = BlogPostManager()
     
@@ -140,3 +155,10 @@ class BlogPost(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse_lazy('blog_post',
+                    kwargs={
+                        'username': self.author.user.username,
+                        'blog_post_slug': self.slug
+                    })

@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from sorl.thumbnail import get_thumbnail
+from django.db import models as dj_models
+from tinymce.widgets import TinyMCE
 
 from main import models, forms
 
@@ -53,6 +55,9 @@ class BlogPostAdmin(admin.ModelAdmin):
     search_fields = ('title', 'body', 'author',)
     list_filter = ('active', 'created', 'updated',)
     prepopulated_fields = {'slug': ('title',)}
+    formfield_overrides = {
+        dj_models.TextField: {'widget': TinyMCE(attrs={'cols':80,'rows':30})}
+    }
     inlines = (
         BlogPostsTagsInline,
     )

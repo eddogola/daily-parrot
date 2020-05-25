@@ -1,13 +1,45 @@
-from django.views.generic import ListView, DetailView, CreateView, FormView
-from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView, DetailView, CreateView, FormView, TemplateView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.contrib.auth import get_user_model
-from django.shortcuts import get_object_or_404, redirect
-from django.utils.text import slugify
 from django.urls import reverse, reverse_lazy
+from django.utils.text import slugify
+from django.db.models import Sum
 from random import sample
 
 from main import models, forms
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+    PER_PAGE = 20
+    
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        user = self.request.user
+        if user.is_authenticated:
+            authors = models.Profile.objects.exclude(pk=self.request.user.profile.pk).\
+                    annotate(rating=Sum('blog_posts__thumbs_up')).order_by('rating')
+            following_posts = user.profile.get_following_posts()
+            posts_list = models.BlogPost.objects.exclude(
+                id__in=[p.pk for p in following_posts]).exclude(author=user.profile)
+            posts_list = following_posts + list(posts_list)
+        else:
+            authors = models.Profile.objects.annotate(rating=Sum('blog_posts__thumbs_up')).order_by('rating')
+            posts_list = models.BlogPost.objects.active()
+        paginator = Paginator(posts_list, self.PER_PAGE)
+        page = self.request.GET.get('page', 1)
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        ctx['authors'] = authors[:3]
+        ctx['posts'] = posts
+        return ctx    
 
 class TopicsListView(ListView):
     model = models.Classification
@@ -16,13 +48,30 @@ class TopicsListView(ListView):
     
 class TopicDetailView(DetailView):
     template_name = 'topic.html'
+    PER_PAGE = 20
     
     def get_object(self):
         obj = get_object_or_404(models.Topic, slug=self.kwargs['topic_slug'])
         return obj
     
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        topic_posts = self.object.blog_posts.all()
+        paginator = Paginator(topic_posts, 30)
+        page = self.request.GET.get('page', 1)
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        ctx['posts'] = posts
+        
+        return ctx
+    
 class ProfileDetailView(DetailView):
     template_name = 'profile.html'
+    PER_PAGE = 10
     
     def get_object(self):
         username = self.kwargs['username']
@@ -32,6 +81,16 @@ class ProfileDetailView(DetailView):
     
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
+        posts_list = self.object.blog_posts.all()
+        page = self.request.GET.get('page', 1)
+        paginator = Paginator(posts_list, self.PER_PAGE)
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        ctx['posts'] = posts
         if self.request.user.is_authenticated:
             is_following = self.request.user.profile.\
                 is_following_profile(self.object)
@@ -96,15 +155,31 @@ def unfollow_profile(request, username):
     #actual unfollowing
     request.user.profile.unfollow_profile(profile)
     return redirect(reverse('profile', args=[username]))
+
+@login_required
+def thumbs(request, blog_post_slug, action):
+    post = models.BlogPost.objects.get(slug=blog_post_slug)
+    if action == 'UP':
+        post.thumbs_up += 1
+    elif action == 'DOWN':
+        post.thumbs_down += 1
+    post.save()
+    return redirect(post.get_absolute_url())
     
 class BlogPostCreateView(LoginRequiredMixin, CreateView):
     form_class = forms.BlogPostForm
     template_name = 'blog_post_create.html'
     
+    def dispatch(self, *args, **kwargs):
+        if not self.request.user.profile.confirmed:
+            messages.warning(self.request, 'confirm your email first before writing an article')
+            return redirect('home')
+        return super().dispatch(*args, **kwargs)
+    
     def form_valid(self, form):
         form.instance.author = self.request.user.profile
         form.instance.slug = slugify(form.instance.title)
-        form.instance.views = 0
+        form.instance.active = True
         return super().form_valid(form)
     
     def get_context_data(self, **kwargs):
