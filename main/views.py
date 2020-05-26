@@ -229,3 +229,15 @@ class EditProfileView(LoginRequiredMixin, FormView):
         
     def get_success_url(self):
         return redirect(reverse_lazy('profile',  args=[self.request.user.username]))
+    
+def page_not_found(request, exception):
+    return render(request, 'error/404.html', status=404)
+
+def internal_server_error(request):
+    return render(request, 'error/500.html', status=500)
+
+def permission_denied(request, exception):
+    return render(request, 'error/403.html', status=403)
+
+def bad_request(request, exception):
+    return render(request, 'error/400.html', status=400)

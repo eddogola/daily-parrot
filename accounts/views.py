@@ -6,7 +6,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.conf import settings
 from django.utils.encoding import force_bytes, force_text
+from django.core.mail import EmailMessage
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse, reverse_lazy
@@ -27,7 +29,6 @@ class SignUpView(CreateView):
     
     def form_valid(self, form):
         user = form.save(commit=False)
-        user.is_active = False
         user.save()
         user.refresh_from_db()
         Profile.objects.create(user=user)
@@ -35,13 +36,18 @@ class SignUpView(CreateView):
         #send confirmation email
         current_site = get_current_site(self.request)
         subject = 'Activate your Daily Parrot account'
-        message = render_to_string('email/account_activation.html', {
+        message_html = render_to_string('email/account_activation.html', {
                 'user': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user)
             })
-        user.email_user(subject, message)
+        msg = EmailMessage(subject=subject, 
+                           body=message_html, 
+                           from_email=settings.DEFAULT_FROM_EMAIL,
+                           to=[user.email])
+        msg.content_subtype = 'html'
+        msg.send()
         messages.success(self.request, 'confirm your email')
         return redirect(self.success_url)
     
@@ -57,7 +63,7 @@ def activate(request, uidb64, token):
         user.profile.confirmed = True
         user.save()
         user.profile.save()
-        messages.success(request, 'you may now log in.')
+        messages.success(request, 'account confirmed successfully')
         return redirect('login')
     else:
         messages.warning(request, 'invalid account activation token')
