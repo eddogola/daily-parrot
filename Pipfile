@@ -13,6 +13,8 @@ pillow = "*"
 sorl-thumbnail = "*"
 python-memcached = "*"
 django-tinymce = "*"
+whitenoise = "==4"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"

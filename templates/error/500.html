@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500</title>
+    <link rel="shortcut icon" href="{% static 'images/parrot.svg' %}" type="image/x-icon">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather:wght@300&display=swap" 
+    rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container d-flex">
+        <div class="mx-auto">
+            <img src="{% static 'images/500.png' %}" width="600" height="400" alt="">
+            <h1>Oops! Internal Server Error</h1>
+            <p>don't worry, our engineers are already on it</p>
+            <a href="{% url 'home' %}">go back home</a>
+        </div>
+    </div>
+</body>
+</html>
