@@ -1,0 +1,902 @@
+[
+{
+    "model": "main.tag",
+    "pk": 1,
+    "fields": {
+        "name": "people",
+        "slug": "people"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 2,
+    "fields": {
+        "name": "art",
+        "slug": "art"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 3,
+    "fields": {
+        "name": "photos",
+        "slug": "photos"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 4,
+    "fields": {
+        "name": "painting",
+        "slug": "painting"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 5,
+    "fields": {
+        "name": "django",
+        "slug": "django"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 6,
+    "fields": {
+        "name": "python",
+        "slug": "python"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 7,
+    "fields": {
+        "name": "javascript",
+        "slug": "javascript"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 8,
+    "fields": {
+        "name": "code",
+        "slug": "code"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 9,
+    "fields": {
+        "name": "writing",
+        "slug": "writing"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 10,
+    "fields": {
+        "name": "language",
+        "slug": "language"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 11,
+    "fields": {
+        "name": "make-up",
+        "slug": "make"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 12,
+    "fields": {
+        "name": "music",
+        "slug": "music"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 13,
+    "fields": {
+        "name": "headphones",
+        "slug": "headphones"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 14,
+    "fields": {
+        "name": "savings",
+        "slug": "savings"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 15,
+    "fields": {
+        "name": "finance",
+        "slug": "finance"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 16,
+    "fields": {
+        "name": "love",
+        "slug": "love"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 17,
+    "fields": {
+        "name": "poetry",
+        "slug": "poetry"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 18,
+    "fields": {
+        "name": "business",
+        "slug": "business"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 19,
+    "fields": {
+        "name": "profits",
+        "slug": "profits"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 20,
+    "fields": {
+        "name": "coronavirus",
+        "slug": "coronavirus"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 21,
+    "fields": {
+        "name": "covid19",
+        "slug": "covid19"
+    }
+},
+{
+    "model": "main.tag",
+    "pk": 22,
+    "fields": {
+        "name": "pandemic",
+        "slug": "pandemic"
+    }
+},
+{
+    "model": "main.classification",
+    "pk": 1,
+    "fields": {
+        "name": "Arts & Entertainment"
+    }
+},
+{
+    "model": "main.classification",
+    "pk": 2,
+    "fields": {
+        "name": "Industry"
+    }
+},
+{
+    "model": "main.classification",
+    "pk": 3,
+    "fields": {
+        "name": "Innovation & Tech"
+    }
+},
+{
+    "model": "main.classification",
+    "pk": 4,
+    "fields": {
+        "name": "Life"
+    }
+},
+{
+    "model": "main.classification",
+    "pk": 5,
+    "fields": {
+        "name": "Society"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Art",
+        "slug": "art",
+        "tagline": "feed your retinas.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/urban_girl_drawing-wallpaper-1366x768_g_T6VkU9c.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Books",
+        "slug": "books",
+        "tagline": "For the bibliophiles",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/library_drawing-wallpaper-1366x768_KvAg_63fwtyN.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Gaming",
+        "slug": "gaming",
+        "tagline": "Ready, player one?",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/ps4_controller-wallpaper-1366x768_RnQaB_kgOGTQh.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 4,
+    "fields": {
+        "name": "Photography",
+        "slug": "photography",
+        "tagline": "Picture this.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/zenith_film_camera-wallpaper-1366x768_R_3sRYGJQ.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 5,
+    "fields": {
+        "name": "Music",
+        "slug": "music",
+        "tagline": "Liner notes",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/music_in_a_slate-wallpaper-1366x768_MwtZyuA.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 6,
+    "fields": {
+        "name": "Poetry",
+        "slug": "poetry",
+        "tagline": "For the well versed.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/writing_a_story-wallpaper-1366x768_TLdK_v3rD9Ow.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 7,
+    "fields": {
+        "name": "Writing",
+        "slug": "writing",
+        "tagline": "Tell your story.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/old_typewriter-wallpaper-1366x768_EjEEA5w.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 8,
+    "fields": {
+        "name": "Sports",
+        "slug": "sports",
+        "tagline": "The beautiful game.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/soccer_inspiration-wallpaper-1366x768_Xm10xGE.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 9,
+    "fields": {
+        "name": "Style",
+        "slug": "style",
+        "tagline": "The fashion.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/gothic_model_fashion_style-wallpaper-13_3wVe8dC.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 10,
+    "fields": {
+        "name": "TV",
+        "slug": "tv",
+        "tagline": "Binge-worthy.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/21st_century_digital_boys-wallpaper-136_N4o644q.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 11,
+    "fields": {
+        "name": "True Crime",
+        "slug": "true-crime",
+        "tagline": "From culprits.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/crime_scene-wallpaper-1366x768_TXeeDkP.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 12,
+    "fields": {
+        "name": "Humor",
+        "slug": "humor",
+        "tagline": "tune in, lol out.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/cats_humor-wallpaper-1366x768_Ry1PkM5.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 13,
+    "fields": {
+        "name": "Makers",
+        "slug": "makers",
+        "tagline": "For those who do.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/factory_2-wallpaper-1366x768_faovXxz.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 14,
+    "fields": {
+        "name": "Beauty",
+        "slug": "beauty",
+        "tagline": "Self-care for the outside.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/scarlett_johansson_makeup-wallpaper-136_55MtfGw.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 15,
+    "fields": {
+        "name": "Comics",
+        "slug": "comics",
+        "tagline": "All the panels and frames fit to print",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/dc_comics_superheroes-wallpaper-1366x76_wt2HO94.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 16,
+    "fields": {
+        "name": "Culture",
+        "slug": "culture",
+        "tagline": "High, low, and sideways.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/culture_behind_colours-wallpaper-1366x7_h18yryv.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 17,
+    "fields": {
+        "name": "Fiction",
+        "slug": "fiction",
+        "tagline": "True lies.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/avengers_infinity_war_2018_movie_groot-_vp9sGaA.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 18,
+    "fields": {
+        "name": "Film",
+        "slug": "film",
+        "tagline": "Behind the silver screen.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/transformers_4_optimus_prime_vs_dinobot_vAAeoki.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 19,
+    "fields": {
+        "name": "Food",
+        "slug": "food",
+        "tagline": "Farm to fridge.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/good_food-wallpaper-1366x768_aQuYRWo.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 20,
+    "fields": {
+        "name": "Podcasts",
+        "slug": "podcasts",
+        "tagline": "An ear to the future.",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/microphone-wallpaper-1366x768_3x5Y93n.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 21,
+    "fields": {
+        "name": "Social Media",
+        "slug": "social-media",
+        "tagline": "Like it (or not).",
+        "classification": 1,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/social_media-wallpaper-1366x768_V7YGQW2.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 22,
+    "fields": {
+        "name": "Biotech",
+        "slug": "biotech",
+        "tagline": "Genetically predisposed.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/biology-wallpaper-1366x768_JkX4Krl.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 23,
+    "fields": {
+        "name": "Business",
+        "slug": "business",
+        "tagline": "From Airbnb to Zappos.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/business_plan-wallpaper-1366x768_zpYLLvg.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 24,
+    "fields": {
+        "name": "Design",
+        "slug": "design",
+        "tagline": "Below the surface.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/creative_hand-wallpaper-1366x768_v5YKXfE.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 25,
+    "fields": {
+        "name": "Economy",
+        "slug": "economy",
+        "tagline": "Follow the money.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/free_business-wallpaper-1366x768_Bp2oYo9.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 26,
+    "fields": {
+        "name": "Freelancing",
+        "slug": "freelancing",
+        "tagline": "Of invoicing and independence.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/laptop-wallpaper-1366x768_zy0odMM.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 27,
+    "fields": {
+        "name": "Leadership",
+        "slug": "leadership",
+        "tagline": "Go forth and manage.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/follow_the_leader-wallpaper-1366x768_YnPR0ob.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 28,
+    "fields": {
+        "name": "Marketing",
+        "slug": "marketing",
+        "tagline": "Always be branding.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/analysis-wallpaper-1366x768_oeqoyin.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 29,
+    "fields": {
+        "name": "Product Management",
+        "slug": "product-management",
+        "tagline": "Bridging the gaps.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/dreams_dont_work_unless_you_do_2-wallpa_NvTqCLl.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 30,
+    "fields": {
+        "name": "Productivity",
+        "slug": "productivity",
+        "tagline": "Working with purpose.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/timex-wallpaper-1366x768_YpSAeOC.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 31,
+    "fields": {
+        "name": "Remote Work",
+        "slug": "remote-work",
+        "tagline": "Working together\u200a\u2014\u200aapart.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/work_schedule-wallpaper-1366x768_VLKyhbP.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 32,
+    "fields": {
+        "name": "Startups",
+        "slug": "startups",
+        "tagline": "Founding, funding, and beyond.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/start_up-wallpaper-1366x768_CclHirK.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 33,
+    "fields": {
+        "name": "Venture Capital",
+        "slug": "venture-capital",
+        "tagline": "Raising stakes.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/money_2-wallpaper-1366x768_m7s61W1.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 34,
+    "fields": {
+        "name": "Work",
+        "slug": "work",
+        "tagline": "The meaning behind the meetings.",
+        "classification": 2,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/workspace_background-wallpaper-1366x768_grFDthe.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 35,
+    "fields": {
+        "name": "Accessibility",
+        "slug": "accessibility",
+        "tagline": "UX for all.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/steampunk_glasses-wallpaper-1366x768_gU_x5uGY9j.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 36,
+    "fields": {
+        "name": "Android Dev",
+        "slug": "android-dev",
+        "tagline": "Building little green robots.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/android_7-wallpaper-1366x768_9zUuNVH_mLTZfI0.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 37,
+    "fields": {
+        "name": "Artificial Intelligence",
+        "slug": "artificial-intelligence",
+        "tagline": "Born to be bot.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/transcendence_2014-wallpaper-1366x768_3_YACPet0.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 38,
+    "fields": {
+        "name": "Blockchain",
+        "slug": "blockchain",
+        "tagline": "The distributed ledger domain.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/3d_social_networking-wallpaper-1366x768_UY381oX.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 39,
+    "fields": {
+        "name": "Cryptocurrency",
+        "slug": "cryptocurrency",
+        "tagline": "An ode to the anti-banks.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/physical_bitcoin-wallpaper-1366x768_W4r_kJglENh.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 40,
+    "fields": {
+        "name": "Cybersecurity",
+        "slug": "cybersecurity",
+        "tagline": "Towards a more perfect password.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/all_eyes_on_you-wallpaper-1366x768_7Mht_kRtUGer.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 41,
+    "fields": {
+        "name": "Data Science",
+        "slug": "data-science",
+        "tagline": "Query this.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/markus-spiske-xekxE_VR0Ec-unsplash_Ihdk_BezTqqI.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 42,
+    "fields": {
+        "name": "Digital Life",
+        "slug": "digital-life",
+        "tagline": "Behind the memes.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/marshmello_digital_painting-wallpaper-1_nPG8zU4.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 43,
+    "fields": {
+        "name": "Gadgets",
+        "slug": "gadgets",
+        "tagline": "The goods on the goods.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/cute_womens_office_desk_stuff-wallpaper_10LGDRc.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 44,
+    "fields": {
+        "name": "iOS Dev",
+        "slug": "ios-dev",
+        "tagline": "Appy talk.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/iphone_and_coffee-wallpaper-1366x768_YS_T91k9kx.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 45,
+    "fields": {
+        "name": "Javascript",
+        "slug": "javascript",
+        "tagline": "An ode to code.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/code_2-wallpaper-1366x768_SHNBcyg_F8IKdoW.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 46,
+    "fields": {
+        "name": "Machine Learning",
+        "slug": "machine-learning",
+        "tagline": "Teaching the learners.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/time_machine_3-wallpaper-1366x768_AQHB6_NqqzFYQ.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 47,
+    "fields": {
+        "name": "Math",
+        "slug": "math",
+        "tagline": "Add it up.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/math_equations-wallpaper-1366x768_uYJjr_Y0KhFvF.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 48,
+    "fields": {
+        "name": "Programming",
+        "slug": "programming",
+        "tagline": "The good, the bad, the buggy.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/lewis-ngugi-f5pTwLHCsAg-unsplash_XKIwh8_asGEnne.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 49,
+    "fields": {
+        "name": "Self-Driving Cars",
+        "slug": "self-driving-cars",
+        "tagline": "Culture crash.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/white_tesla_roadster_electric_supercar__NizS9e0.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 50,
+    "fields": {
+        "name": "Software Engineering",
+        "slug": "software-engineering",
+        "tagline": "Back-end to front-end.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/oskar-yildiz-gy08FXeM2L4-unsplash_ZsJffBk.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 51,
+    "fields": {
+        "name": "Space",
+        "slug": "space",
+        "tagline": "Boldly going.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/space_travel_2-wallpaper-1366x768_s7tVJ_tQ4giJD.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 52,
+    "fields": {
+        "name": "Technology",
+        "slug": "technology",
+        "tagline": "The download.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/fazly-shah-Ei5d39YRrgY-unsplash_D9akgL0_5HDXZTo.jpg"
+    }
+},
+{
+    "model": "main.topic",
+    "pk": 53,
+    "fields": {
+        "name": "UX",
+        "slug": "ux",
+        "tagline": "All about that user.",
+        "classification": 3,
+        "banner": "/home/edogola/daily_parrot/uploads/topic-banners/marcelo-cidrack-dPhocHst32I-unsplash_UI_nXba1u5.jpg"
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$150000$2xVav4oFmEjK$nqksBbogTp7pSEvZ7rHJvTNbPi9GdHJdRejZV8Cxgn0=",
+        "last_login": "2020-05-28T13:02:29.680Z",
+        "is_superuser": true,
+        "username": "eddy",
+        "first_name": "Eddy",
+        "last_name": "Ogola",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-05-17T13:52:52.037Z",
+        "email": "edogola01@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "main.profile",
+    "pk": "5016775a-77c5-4ada-9329-7c94f2f34626",
+    "fields": {
+        "user": 1,
+        "avatar": "avatars/5016775a-77c5-4ada-9329-7c94f2f34626/603a96b2-b3fb-4fc5-901b-843f2bb64d16.jpg",
+        "bio": "Artist | Programmer | Writer | Reader |Anime|Gamerrr...",
+        "joined": "2020-05-28T13:01:10.895Z",
+        "confirmed": true,
+        "topics": []
+    }
+},
+{
+    "model": "main.blogpost",
+    "pk": "443071c1-49a9-43e7-b77c-154207a84169",
+    "fields": {
+        "slug": "three-young-brothers-made-a-black-widow-spider-bite-them-hoped-to-become-spider-man",
+        "title": "Three young brothers made a black widow spider bite them, hoped to become Spider-Man",
+        "tagline": "spidey sense",
+        "body": "<p style=\"box-sizing: border-box; color: #333333; margin-top: 0px; font-family: 'Libre Baskerville', sans-serif; font-size: 16px; background-color: #ffffff;\">In Chayanta, Bolivia, three brothers, ages 12, 10 and 8, came upon a black widow spider while herding goats. They poked at the spider until it bit each of them. Why? They hoped to become Spider-Man. According to a report in&nbsp;<a style=\"box-sizing: border-box; text-decoration-line: none; color: #0000ff; font-weight: bold;\" href=\"https://www.telemundoyakimatricities.com/hermanitos-se-dejan-picar-por-venenosa-arana-para-convertirse-en-spider-man/\">Telemundo</a>, their mom found them very upset and took them to a health center that moved them to a hospital. From the&nbsp;<a style=\"box-sizing: border-box; text-decoration-line: none; color: #0000ff; font-weight: bold;\" href=\"https://nypost.com/2020/05/25/boys-let-black-widow-bite-them-in-hopes-of-turning-into-spider-man/amp/\">New York Post</a>:</p>\r\n<blockquote style=\"box-sizing: border-box; border-left: 4px solid #999999; padding-left: 1em; margin: 1em; font-family: 'Libre Baskerville', sans-serif; font-size: 16px; background-color: #ffffff;\">\r\n<p style=\"box-sizing: border-box; color: #444444; margin-top: 0px;\">The would-be Peter Parkers were transferred a third time, taken to the Children&rsquo;s Hospital in La Paz the next day with fevers, tremors and muscle pains, according to the report.</p>\r\n<p style=\"box-sizing: border-box; color: #444444; margin-top: 0px;\">There, they were treated and discharged last Wednesday, almost a week after they were bitten, the report says.</p>\r\n</blockquote>\r\n<p style=\"box-sizing: border-box; color: #333333; margin-top: 0px; font-family: 'Libre Baskerville', sans-serif; font-size: 16px; background-color: #ffffff;\">No word on whether they can now sling webs.</p>",
+        "created": "2020-05-28T13:01:35.798Z",
+        "updated": "2020-05-28T13:01:35.798Z",
+        "banner": "/home/edogola/daily_parrot/uploads/blog-posts-banners/spider_man_2012-wallpaper-1366x768_JGYbPFf.jpg",
+        "author": "5016775a-77c5-4ada-9329-7c94f2f34626",
+        "topic": 12,
+        "active": true,
+        "thumbs_up": 2,
+        "thumbs_down": 0,
+        "tags": []
+    }
+},
+{
+    "model": "main.blogpost",
+    "pk": "8b7dfa7f-5dae-45d1-b5d6-e77270e9271f",
+    "fields": {
+        "slug": "how-to-name-your-tech-startup",
+        "title": "How to Name Your Tech Startup",
+        "tagline": "find the 'perfect' name",
+        "body": "<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Starting a tech company is exciting, but there are dozens of factors you&rsquo;ll need to consider if you want your startup to succeed. Much of your time brainstorming will be spent considering things like how to reduce costs, how to expand efficiently, and how to build the right team&mdash;but you&rsquo;ll also need to consider the nature of your brand, including your business&rsquo;s name.</p>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\">What&rsquo;s in a Name?</h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">A business name may not seem like that big of a deal, but it can affect the future of your business in several ways:</p>\r\n<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Identification.&nbsp;</span>This is the name people will see when encountering your business for the first time. Is it clear how your business operates? Is it clear what industry you&rsquo;re in?</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">First impressions.</span>&nbsp;What kind of feeling do people have when they see this name for the first time? If you aren&rsquo;t careful, you could give people the wrong idea&mdash;and turn them off from your business indefinitely.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Memorability.&nbsp;</span>If your business name is long, complicated, or too unusual, people won&rsquo;t remember it&mdash;and they won&rsquo;t share your name with other people. Good names are &ldquo;sticky&rdquo; and easy to remember.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Marketing opportunities.</span>&nbsp;Your name will play a major role in your business&rsquo;s marketing as well; it often dictates your choice of web domain, your search engine optimization (SEO), and almost all of your other marketing and advertising campaigns.</li>\r\n</ul>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Accordingly, your choice in business name can have a massive&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/03/10/what-happens-when-a-tech-startup-fails/\">impact on your odds of success</a>.</p>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\">Getting Started</h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Many new entrepreneurs simply don&rsquo;t know where to begin. They may have thought up a few business name ideas on their own, based on instinct or loose inspiration from other businesses in the past, but they aren&rsquo;t sure how to generate more ideas or how to narrow down the candidates for selection.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">There are a few important ways to get started, if this is the case. First, start doing research on other businesses like yours. If there are any businesses currently in this space, what names do they offer? What features do these names have in common? What features seem to be missing? Write these down so you can reference them in the future.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">You&rsquo;ll also want to generate a list of business names you like, regardless of what industry they&rsquo;re in. What is it that you like about these names? What kind of feelings do they evoke in you? Are there any ways you could change them for the better, or ways they could better fit your industry?</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Next, make use of a tool like&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://howtostartanllc.com/business-name-generator\">TRUiC&rsquo;s business name generator</a>. There, you&rsquo;ll have the opportunity to enter a handful of words, choose an industry, and generate a plethora of available business names. Any of these could eventually serve as the name of your business, but for now, you should think of them as brainstorming opportunities.</p>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\">Key Factors of Successful Business Names</h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">There&rsquo;s no surefire formula to define business names that are likely to be successful or unsuccessful. However, strong business names have a few things in common:</p>\r\n<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Unique.&nbsp;</span>Arguably the most important quality, your startup&rsquo;s name should be unique. If it sounds too similar to another business, regardless of whether it&rsquo;s a direct competitor or a business in another industry, it&rsquo;s going to create confusion. This is why many startups have attempted to invent new words entirely, or modify existing words to make them seem more original.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Short.&nbsp;</span>In general, shorter names are superior. They&rsquo;re simpler, they&rsquo;re easier to spell, they take less time to write, and they take up less space in advertisements. They&rsquo;re also harder to misremember or get wrong. That said, it&rsquo;s also harder to come up with an idea for a short name, and they can be more expensive.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Simple to spell.</span>&nbsp;Lots of modern startups try to capitalize on a unique spelling or intentional misspelling of a word to make themselves&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2011/01/17/whats-in-a-name-is-a-hip-start/\">seem more hip</a>&nbsp;(or to get a brand name that would otherwise be very common). There are some advantages to this, but you&rsquo;ll also want to make sure your business name is easy to spell. If people hear it for the first time, without seeing the word printed, they should be able to search for (and find) your business easily.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Available as a domain.&nbsp;</span>Speaking of searchability, an ideal business name should also be available as a domain. Domain names that match business names tend to be much more powerful, capable of attracting more traffic and reducing confusion among customers.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Easy to write and say.</span>&nbsp;Short, intuitive spellings will naturally be easy to write. But your business name should also be easy to say. If someone sees your business name in print for the first time and struggles to pronounce it correctly, you have a problem; you&rsquo;ll also have a problem if the word is clunky or difficult to get out.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Relevant to your industry.</span>&nbsp;Ideally, your business name should at least partially convey what your business does. A name like &ldquo;Lyft&rdquo; is a unique spin on &ldquo;lift,&rdquo; a term that can be applied to giving someone a ride in a car. This isn&rsquo;t a strict rule, but it can help you establish your industry with new customers early on.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Workable into a logo.</span>&nbsp;Most business names end up directly integrated into a logo, and other branding collateral. This is a step that often comes later, but you&rsquo;ll want to keep it in mind when developing a business name. Does this name seem like it &ldquo;plays well&rdquo; in these contexts?</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Capable of evoking feeling.&nbsp;</span>A good business name should immediately convey some kind of feeling or attitude. For example, can you tell from the outset whether this startup is more serious or more playful?</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Free from negative associations.</span>&nbsp;You&rsquo;ll also want to do some research to make sure this name isn&rsquo;t associated with anything negative. For example, you won&rsquo;t want to choose a company name that could be translated as a taboo word in another language, or one even marginally associated with a historical tragedy.</li>\r\n</ul>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\">Getting Feedback</h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">After utilizing research and brainstorming tools, and evaluating your work for the aforementioned qualities, you should have at least a short list of potential business names available. How can you narrow the list down?</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">You can work on this yourself, but it&rsquo;s often more beneficial to seek feedback from external sources. For example, one option is to talk to a mentor, advisor, investor, or even another business owner you respect. Do these experts&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2019/04/26/how-new-tech-startups-can-differentiate-themselves/\">think your name is sufficiently distinguished</a>? What was their first impression when they initially heard it? Can they think of any way this name could be misheard, misinterpreted, or associated with something negative? In many cases, you&rsquo;ll find another person&rsquo;s perspective illuminating.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">If you have a few names that get the approval of your peers and mentors, the next step is gathering feedback from people who may one day be your customers. Ideally, you&rsquo;ll work with a pool of a few dozen to a few hundred people within your target demographics, asking them how they feel about your name in context. Ask them what they like and/or don&rsquo;t like about each name, and get them to be as specific as possible.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">If people don&rsquo;t seem to take well to your name, you may have to go back to the drawing board.</p>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\">Finalizing Your Name Choice</h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Eventually, you&rsquo;ll find a name that works well in every category; it&rsquo;s simple functional, unique, and fits your brand perfectly. At this point, you&rsquo;ll be ready to assign it to your business.&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2018/08/30/trademark-protection-for-startups/\">Trademarking the name</a>&nbsp;shouldn&rsquo;t be difficult if it&rsquo;s unique, and when that&rsquo;s done, you can formally register your business in your chosen state of operations. From there, you&rsquo;ll be able to experiment with the name by trying out different types of logos, different marketing angles, and more.</p>",
+        "created": "2020-05-28T13:01:34.592Z",
+        "updated": "2020-05-28T13:01:34.592Z",
+        "banner": "/home/edogola/daily_parrot/uploads/blog-posts-banners/workspace_background-wallpaper-136_Fsjd1ql.jpg",
+        "author": "5016775a-77c5-4ada-9329-7c94f2f34626",
+        "topic": 32,
+        "active": true,
+        "thumbs_up": 0,
+        "thumbs_down": 0,
+        "tags": []
+    }
+},
+{
+    "model": "main.blogpost",
+    "pk": "c3b117c5-31d4-460f-9cf0-f21222823811",
+    "fields": {
+        "slug": "why-the-world-has-needed-the-coronavirus",
+        "title": "Why The World has Needed the Coronavirus",
+        "tagline": "here is the reason",
+        "body": "<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">How and why has&nbsp;</span>humanity&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/04/14/how-will-the-pandemic-impact-the-future-of-work/\">created a pandemic</a><span style=\"box-sizing: border-box;\">? Have inexorable protection mechanisms have been triggered to create what is now created? What scenarios are going to play out in the current situation? Here is why the world has needed the coronavirus.<br style=\"box-sizing: border-box;\" /></span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">During the last hundred years, humanity has been continuously&nbsp;</span>moving toward self-destruction<span style=\"box-sizing: border-box;\">. Humanity has many apparent problems, which nobody wants to solve &ndash;or&ndash; even discuss. The purpose of human life seems to be lost. The dull existence of the majority of people seems to be restrained by office-to-home life, and a whole lot of dissatisfaction with everything we have. We have life, government, family, money, and the entire world around us &mdash; but these wonders seem to matter little to the masses.</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">The Lessons Of The 1918 Pandemic (H1N1 Virus) Still Aren&rsquo;t Learned.</span></h2>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">A hundred years ago &mdash; humanity faced an unusually deadly&nbsp;</span><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://www.cdc.gov/flu/pandemic-resources/1918-pandemic-h1n1.html\">influenza pandemic</a><span style=\"box-sizing: border-box;\">. It claimed even more lives than the upcoming World War I. People didn&rsquo;t learn the lessons they had to learn at that time.&nbsp;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">We may logically suppose that the reason for a similar situation today lies in the unlearned lessons of the past. The lessons, which have been taught by the Spanish flu (the virus strain H1N1), still aren&rsquo;t understood by humanity today. We have changed nothing since that time.&nbsp;</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">Is the Purpose of Life Lost?</span></h2>\r\n<figure id=\"attachment_170318\" class=\"wp-caption aligncenter\" style=\"box-sizing: border-box; margin: 0px 0px 1rem; max-width: 100%; width: 900px; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" aria-describedby=\"caption-attachment-170318\"><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444.jpeg\"><img class=\"wp-image-170318\" style=\"box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;\" src=\"https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444-900x506.jpeg\" sizes=\"(max-width: 900px) 100vw, 900px\" srcset=\"https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444-900x506.jpeg 900w, https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444-300x169.jpeg 300w, https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444-260x146.jpeg 260w, https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444-1536x864.jpeg 1536w, https://images.readwrite.com/wp-content/uploads/2020/04/sport-treadmill-tor-route-163444.jpeg 1880w\" alt=\"purpose of life\" width=\"900\" height=\"506\" /></a>\r\n<figcaption id=\"caption-attachment-170318\" class=\"wp-caption-text\" style=\"box-sizing: border-box;\"><em style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Is the purpose of a great life &mdash; lost?&nbsp;&nbsp;&nbsp;&nbsp;</span></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style=\"box-sizing: border-box;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image credit: Pixabay</em></figcaption>\r\n</figure>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The only logical explanation for this is that people have deprived their lives of any meaning. As known, the Earth always finds a way to purify itself from&nbsp;</span>the purposeless.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The majority think that the primary life purpose is to get married, to have children, to feed them up, to bring them up, to live waiting for grandchildren, to abandon the worldly and go to a monastery, to serve God, to please people, or on the contrary &mdash; to reject all this and dedicate a whole yourself to a business and career. However, are you sure that all these concepts restrict the true purpose of human life? What do we really exist for?</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Do you believe that this incredible biological being has appeared with a mission to copy itself in a kid or two and turn into ruins even before 80 years old, the age when you become so unable to live that life looks rather like suffering?</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">People produce emotions and feelings. Actually, a lot of them. Meaningless life means the total absence of emotions as well as the absence of a zest for life. &ldquo;How can I have a zest for life if every single day of my being is the same?&rdquo;&nbsp;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">&ldquo;I want a car that is better than my neighbor&rsquo;s one, I want a woman that is prettier than his girlfriend, and I want to spend my next vacation at a luxury resort on the Canary Islands.&rdquo; At least, that&rsquo;s a good try to formulate a life goal. Most of us haven&rsquo;t even set such goals. What do we really exist for &mdash; to eat tasty food and to sleep well?</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">Who Are We for the Earth?</span></h2>\r\n<figure id=\"attachment_170321\" class=\"wp-caption aligncenter\" style=\"box-sizing: border-box; margin: 0px 0px 1rem; max-width: 100%; width: 900px; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" aria-describedby=\"caption-attachment-170321\"><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://images.readwrite.com/wp-content/uploads/2020/04/photo-1451187580459-43490279c0fa.jpg\"><img class=\"wp-image-170321 size-large\" style=\"box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;\" src=\"https://images.readwrite.com/wp-content/uploads/2020/04/photo-1451187580459-43490279c0fa-900x599.jpg\" sizes=\"(max-width: 900px) 100vw, 900px\" srcset=\"https://images.readwrite.com/wp-content/uploads/2020/04/photo-1451187580459-43490279c0fa-900x599.jpg 900w, https://images.readwrite.com/wp-content/uploads/2020/04/photo-1451187580459-43490279c0fa-300x200.jpg 300w, https://images.readwrite.com/wp-content/uploads/2020/04/photo-1451187580459-43490279c0fa-240x160.jpg 240w, https://images.readwrite.com/wp-content/uploads/2020/04/photo-1451187580459-43490279c0fa.jpg 1052w\" alt=\"people on earth\" width=\"900\" height=\"599\" /></a>\r\n<figcaption id=\"caption-attachment-170321\" class=\"wp-caption-text\" style=\"box-sizing: border-box;\"><em style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">What do WE, as people, mean for the Earth?&nbsp;&nbsp;&nbsp;&nbsp;</span></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image credit: Unsplash</figcaption>\r\n</figure>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Let&rsquo;s take a different look. What do people mean for the Earth? The massive deforestation, ruthless depletion of natural resources, atmosphere and water pollution, and tons of waste. Doesn&rsquo;t sound good, right?</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Oil is the primary natural resource, which we&rsquo;re now the most actively depleting. Although humanity has stepped into the era of&nbsp;</span><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/03/22/from-polarization-to-open-learning-how-technology-can-help-us-beyond-covid-19/\">technology disruptions</a><span style=\"box-sizing: border-box;\">&nbsp;across all the industries, we are still not ready to give up oil and start exploiting environmentally friendly sources of energy. You may wonder why? Obviously, because oil is power and money.</span></p>\r\n<blockquote style=\"box-sizing: border-box; margin: 0px 0px 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\">\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em;\"><em style=\"box-sizing: border-box;\">Those people who want to start using alternatives to oil &mdash; don&rsquo;t have an opportunity to do it, and those who have opportunities &mdash; don&rsquo;t want to do it.</em></p>\r\n</blockquote>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">How to Find the Life Purpose When The World Is Paused?</span></h2>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Somebody likes to watch TV, somebody likes to pray, somebody likes to advocate for animal protection, anybody else likes to study or teach. Let&rsquo;s be honest; nobody feels absolute satisfaction from his or her self-realization. Probably, someone feels a little bit of pleasure, but this is far from what you would like to experience. That&rsquo;s right?</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">So, how to find a notorious purpose of life and stop going with the flow? How do you feel anything more than despondency and disappointment? How do you cease this dull existence and to fill it with meaning? How do you feel curious about life again and want to wake up in the morning? How do you live and feel? How do you find the lost purpose of life &ndash;especially now&ndash; when the whole world has paused, and the quarantine has restricted our activities? Does this purpose exist at all?</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">Coronavirus Is Speeding Already Existing Processes</span></h2>\r\n<figure id=\"attachment_170322\" class=\"wp-caption aligncenter\" style=\"box-sizing: border-box; margin: 0px 0px 1rem; max-width: 100%; width: 900px; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" aria-describedby=\"caption-attachment-170322\"><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://images.readwrite.com/wp-content/uploads/2020/04/photo-1584092067256-a2e3617f709b.jpg\"><img class=\"wp-image-170322 size-large\" style=\"box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;\" src=\"https://images.readwrite.com/wp-content/uploads/2020/04/photo-1584092067256-a2e3617f709b-900x604.jpg\" sizes=\"(max-width: 900px) 100vw, 900px\" srcset=\"https://images.readwrite.com/wp-content/uploads/2020/04/photo-1584092067256-a2e3617f709b-900x604.jpg 900w, https://images.readwrite.com/wp-content/uploads/2020/04/photo-1584092067256-a2e3617f709b-300x201.jpg 300w, https://images.readwrite.com/wp-content/uploads/2020/04/photo-1584092067256-a2e3617f709b-239x160.jpg 239w, https://images.readwrite.com/wp-content/uploads/2020/04/photo-1584092067256-a2e3617f709b.jpg 1045w\" alt=\"stay healthy\" width=\"900\" height=\"604\" /></a>\r\n<figcaption id=\"caption-attachment-170322\" class=\"wp-caption-text\" style=\"box-sizing: border-box;\"><em style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Are people staying healthy in our society?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image credit: Unsplash</figcaption>\r\n</figure>\r\n<blockquote style=\"box-sizing: border-box; margin: 0px 0px 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\">\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0px; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em;\"><em style=\"box-sizing: border-box;\">In the wild, a weak or ill animal is always killed by a predator&hellip;</em></p>\r\n</blockquote>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Are people staying healthy in our society? From early childhood and throughout life &mdash; we have diseases, diseases, diseases. Most of the planet is ill and still being ill all life long. The sick body means an unhealthy mindset that leads to a bad lifestyle and harmful habits. Case in point: our eating habits &mdash; and lack of exercise. These two particular issues merely exacerbate diseases.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">In other words, human society is ill, the current situation is going to get worse, and&nbsp;</span><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/04/09/digital-marketing-coronavirus/\">Coronavirus</a><span style=\"box-sizing: border-box;\">&nbsp;is speeding up an already existing disease process.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Humans must have a more significant life purpose than to survive and proliferate. Otherwise, would we not have many&nbsp;</span><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/04/14/how-will-the-pandemic-impact-the-future-of-work/\">more opportunities</a><span style=\"box-sizing: border-box;\">&nbsp;if compared to the animal and plant worlds? People exploit resources provided by both of these natural habitats and pump other resources out of the bowels of the Earth.&nbsp;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Such the dominant position has its price &mdash; we aren&rsquo;t allowed only to take anymore. If we don&rsquo;t give something in return, these resources will be exhausted very soon. It&rsquo;s only a matter of time. However, it&rsquo;s ticking faster today.</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">The Frequency of Emotions and The Earth Frequency (Schumann Resonance)</span></h2>\r\n<figure id=\"attachment_170323\" class=\"wp-caption aligncenter\" style=\"box-sizing: border-box; margin: 0px 0px 1rem; max-width: 100%; width: 900px; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" aria-describedby=\"caption-attachment-170323\"><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857.jpeg\"><img class=\"wp-image-170323 size-large\" style=\"box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;\" src=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857-900x600.jpeg\" sizes=\"(max-width: 900px) 100vw, 900px\" srcset=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857-900x600.jpeg 900w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857-300x200.jpeg 300w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857-240x160.jpeg 240w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857-1536x1025.jpeg 1536w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-2822857.jpeg 1880w\" alt=\"feelings\" width=\"900\" height=\"600\" /></a>\r\n<figcaption id=\"caption-attachment-170323\" class=\"wp-caption-text\" style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bolder;\"><em style=\"box-sizing: border-box;\">Feelings are our means to interact with the surrounding world we live in.</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style=\"box-sizing: border-box;\">&nbsp;Image credit: Pexels</em></figcaption>\r\n</figure>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">We feel a lot of emotions all the time. It is our way to interact with the surrounding world. Everything happening in our lives triggers particular feelings or states of the mood, which are positive, negative, and more or less neutral.&nbsp;</span><span style=\"box-sizing: border-box;\">Now imagine that the entire humanity produces emotions that make up a collective consciousness. Every single emotion or feeling has its own frequency of vibration. There are high- and low-frequency emotions.&nbsp;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">For a long time, the constant aimlessness, dissatisfaction, and claims have been generating the low-frequency vibrations. According to multiple&nbsp;</span><span style=\"box-sizing: border-box;\">scientific studies</span><span style=\"box-sizing: border-box;\">, the planet&rsquo;s frequency (also known as Schumann resonance) has increased to more than 30 Hz today while the average frequency of the offense, for example, fluctuates from 0,6 to 3,3 Hz.&nbsp;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The gap in the frequency of vibrations (ours and the planet&rsquo;s) might not be so critical if the Earth frequency was&nbsp;</span><span style=\"box-sizing: border-box;\">7,6 &ndash; 7,8 Hz as before. However, it has already reached 30 Hz, which clearly shows that our planet is changing, and we can&rsquo;t stay the same. All in all, it&rsquo;s just a theory since an average person can neither test these data nor diagnose his/her own frequency of vibrations.</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">The Answer</span></h2>\r\n<figure id=\"attachment_170324\" class=\"wp-caption aligncenter\" style=\"box-sizing: border-box; margin: 0px 0px 1rem; max-width: 100%; width: 900px; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" aria-describedby=\"caption-attachment-170324\"><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423.jpeg\"><img class=\"wp-image-170324 size-large\" style=\"box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;\" src=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423-900x600.jpeg\" sizes=\"(max-width: 900px) 100vw, 900px\" srcset=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423-900x600.jpeg 900w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423-300x200.jpeg 300w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423-240x160.jpeg 240w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423-1536x1024.jpeg 1536w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-1530423.jpeg 1880w\" alt=\"free self\" width=\"900\" height=\"600\" /></a>\r\n<figcaption id=\"caption-attachment-170324\" class=\"wp-caption-text\" style=\"box-sizing: border-box;\"><em style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">How are we going to free ourselves from this pandemic?&nbsp;&nbsp;&nbsp;&nbsp;</span></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image credit: Pexels</figcaption>\r\n</figure>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">You might wonder what we can do about this pandemic? First, the root cause for most physical and mental diseases is parasites. Keep in mind, if you don&rsquo;t feel them inside of you, it doesn&rsquo;t mean that they aren&rsquo;t there indeed.&nbsp;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The easiest way to test if you have parasites or not is to analyze your social surroundings. Do you know vampiric people who live in negativism, complain about everything, and produce other low-frequency emotions? Commonly, they are also dissatisfied with everything they have: life, wife, husband, or whatever&hellip;</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Usually, people underestimate the destructive influence of such &ldquo;negative&rdquo; personalities on their lives and don&rsquo;t do anything to stop suffering from the pressure. The parasites inside of your body and your life are the first sign showing that you aren&rsquo;t high-vibrational at the moment.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">At this step, we may face the next question. What if our parents, closest friends, or even spouses, may fall into this category? What if you share a room or apartment with them? You can start by undergoing a complex anti-parasite program. The changes inside of your body will lead to life changes; everything is interrelated.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The next step of self-diagnosis is to ask yourself whether you wear old or second-hand clothing, do use quality cosmetics, or do you use it at all? Do you sometimes pamper yourself with a spa or anything similar that reveals your self-love? If you try to save money by cutting spendings on yourself, you have little chances to be happy, and consequently, the frequency of your vibrations can&rsquo;t increase.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The third question arose: how busy are you? Are you engaged with anything else besides your daily obligations? Do you have a zest for life, or are you just killing time in the attempts to fill your life with anything else? Especially during the quarantine when you have more time for yourself and for doing what you love the most.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">If you&rsquo;re busy, doing something that brings you pleasure and evokes your zest for life, then all the key points mentioned above are positively implemented by default, and your high-vibrational potential is activated.</span></p>\r\n<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: 400;\">Conclusion</span></h2>\r\n<figure id=\"attachment_170325\" class=\"wp-caption aligncenter\" style=\"box-sizing: border-box; margin: 0px 0px 1rem; max-width: 100%; width: 900px; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" aria-describedby=\"caption-attachment-170325\"><img class=\"wp-image-170325 size-large\" style=\"box-sizing: border-box; vertical-align: middle; border-style: none; max-width: 100%; height: auto;\" src=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-3068707-900x506.jpeg\" sizes=\"(max-width: 900px) 100vw, 900px\" srcset=\"https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-3068707-900x506.jpeg 900w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-3068707-300x169.jpeg 300w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-3068707-260x146.jpeg 260w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-3068707-1536x864.jpeg 1536w, https://images.readwrite.com/wp-content/uploads/2020/04/pexels-photo-3068707.jpeg 1880w\" alt=\"\" width=\"900\" height=\"506\" />\r\n<figcaption id=\"caption-attachment-170325\" class=\"wp-caption-text\" style=\"box-sizing: border-box;\"><em style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">It&rsquo;s impossible to predict the scenarios of life.&nbsp;&nbsp;</span></em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style=\"box-sizing: border-box;\">&nbsp;Image credit: Pexels</em></figcaption>\r\n</figure>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Every day thousands of human lives are claimed by a particular virus or bacteria that has been, maybe, invented by humans who have just lost control over it. It&rsquo;s impossible to predict the scenarios of the upcoming events and the number of deaths.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">The only thing we know for sure is that our existence has the purpose and meaning, which we create for it by ourselves. You are the only person who decides on the meaning of your life. By doing what you&rsquo;ve been doing before, you will have the same as what you&rsquo;ve had before. But, you also have a choice to follow something that evokes your zest for life.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">For example, you like to watch documentaries about the underwater world, but you think that it is a waste of time. Then why watch it? It would be more beneficial if you cleaned home or washed dishes, and you don&rsquo;t do it. However, while watching this movie, you could probably come up with a big idea, for example, to start a business related to breeding rare species of aquarium fish or something like this.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">Most often, ideas come to mind when you&rsquo;re interacting with information. Like a living organism, information interacts with you and empowers you to create something new and exciting. If you want to do something&nbsp; &mdash; just do it, despite the fact that it may seem senseless to you at that moment.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">You shouldn&rsquo;t, of course, go to another extreme, consuming information from books and the Internet without any selectivity. You should try to listen to yourself and your desires. But you must also be able to distinguish your genuine desires from those imposed by anybody else.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box;\">You can change your life by yourself, and it does not require any extra human effort: just create your life purpose.</span></p>",
+        "created": "2020-05-28T13:01:32.476Z",
+        "updated": "2020-05-28T13:01:32.476Z",
+        "banner": "/home/edogola/daily_parrot/uploads/blog-posts-banners/colorful_balloons_happy_girl_smili_r0SmbVu.jpg",
+        "author": "5016775a-77c5-4ada-9329-7c94f2f34626",
+        "topic": 21,
+        "active": true,
+        "thumbs_up": 0,
+        "thumbs_down": 0,
+        "tags": []
+    }
+},
+{
+    "model": "main.blogpost",
+    "pk": "e883329e-57f3-4d23-b081-7bea74a3d6e8",
+    "fields": {
+        "slug": "5-advantages-artificial-intelligence-can-give-your",
+        "title": "5 Advantages Artificial Intelligence can Give Your SME",
+        "tagline": "How fast do trends in the market advance? Specifically with regards to artificial intelligence. Businesses are taking advantage of artificial intelligence as a breakneck pace. According to a BI Intelligence report, 80% of companies will use AI chatbots by 2020. Here are five advantages artificial intelligence can give your SMEs.",
+        "body": "<h2 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: omnes-pro; line-height: 1.2; color: #2d2620; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Artificial Intelligence is&nbsp;</span><span style=\"box-sizing: border-box; font-weight: bolder;\">a trend that makes sense.</span></h2>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Some SMEs fear that AI is an unattainable technology and difficult to apply. Conversely, business intelligence will help SMEs save a lot of time and money.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">But what is artificial intelligence, and how does it relate to business? What are the advantages that artificial intelligence can give your SME?</p>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Artificial intelligence and business.</span></h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">The term artificial intelligence can be used on all tasks that solve human intelligence foibles, and they are solved, quickly, by machines. Tasks such as planning or learning languages, for example, or recognizing objects in photos, people&rsquo;s voices, and feelings, can be done by AI.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">And the truth is that artificial intelligence has a lot of potential. It is hoped that it can help solve very diverse problems ( prevent natural catastrophes, for example), but also that it will generate many other solutions.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://en.wikipedia.org/wiki/Elon_Musk\">Elon Musk</a>&nbsp;is a strong promoter of AI regulation. Musk believes that if AI is not regulated &mdash; it can be perilous. A recent example of this could be the GPT-2 text generator, capable of generating fake news that is too credible. Its creators (OpenIA, powered precisely by Musk) saw this generator as a threat more than anything else and decided to censor the full version &mdash; fearing the consequences. Thus, artificial intelligence has advantages and disadvantages.</p>\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.35rem; background-color: #ffffff;\">Tasks machines solve</h4>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Some examples of artificial intelligence we can find in our daily life: so, when we open Facebook and see the content that appears in the &ldquo;News&rdquo; tab, there is a selection in what is shown to each user, and an algorithm makes that&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2019/10/10/is-artificial-intelligence-the-ultimate-university-stimulus/\">selection with artificial intelligence</a>. The same as when Amazon recommends a product or book. Or surely you have seen some content that Netflix suggests to you because you saw another similar one. These examples are from the machines in the form of AI software.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Other examples are easier to see. Emotech&rsquo;s assistant, Olly, is very similar to Amazon&rsquo;s Alexa or Google Home, but has a fundamental difference: her personality can evolve &mdash; this is AI.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">We see that artificial intelligence is linked to business, and companies are taking advantage of artificial intelligence to do their tasks faster and at a lower cost.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">AI is one of the most disruptive technologies of the century, and it is helping SMEs to evolve faster, especially in the field of communications, product development, and customer service.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Ways AI can help your business.</span></p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">The results of a Vistage survey of SME leaders make clear that the benefits of artificial intelligence are becoming very important to the business. 29.5% of those surveyed stated that, of all the new technologies, artificial intelligence is the one that will have the most significant impact on their companies.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">So what are the benefits that&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2019/10/24/10-radical-ways-iot-will-revamp-your-seo-strategy-in-2020/\">SMEs can get from using artificial intelligence</a>? The AI advantages are capable of reducing costs, optimizing the use of time, and achieving an increase in results:</p>\r\n<ol style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: inherit; line-height: 1.2; color: inherit; font-size: 1.35rem;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Optimize Human Resources tasks.</span></h4>\r\n</li>\r\n</ol>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">One of the areas in which artificial intelligence is advancing is Human Resources. Today, it is possible to take advantage of artificial intelligence to improve personnel selection processes, as well as to receive returns from new employees on the same method (and optimize it).</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Among the advantages of using AI in this type of process can be the fact that it can help your company choose between lots of applicants to see precisely which ones match the search criteria. Matching the search criteria not only reduces time and costs but also enhances applicants&rsquo; quality and suitability, which, in turn, saves HR time they can spend on other tasks.</p>\r\n<ol style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" start=\"2\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: inherit; line-height: 1.2; color: inherit; font-size: 1.35rem;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Automate conversations with customers.</span></h4>\r\n</li>\r\n</ol>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">A chatbot with artificial intelligence is another of&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/02/24/how-ai-at-the-edge-other-iot-trends-are-transforming-every-industry/\">the most common examples in business</a>&nbsp;intelligence. The acquisition of chatbots by companies is, as we saw above, increasingly common and necessary for SMEs, regardless of their size.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">One of the most important trends in digital marketing is conversational marketing, which proposes a return to conversations and the human factor in sales.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">And that&rsquo;s where chatbots have a lot to contribute: they can become a 24/7 customer service, and above all, capable of generating conversations. Potential clients don&rsquo;t want to go through the experience of filling out long forms and then have to wait for an answer: they need immediate attention and human warmth.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Many of the SMEs do not have sales teams or customer service. If this is your case, then you could find in chatbots a way to relieve the pressure of generating and maintaining lots of conversations at the same time.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">And if you have a sales team, using a chatbot can be a great idea. Not only does it ease the operational burden, but it helps them focus on what they really need to do: sell.</p>\r\n<ol style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" start=\"3\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: inherit; line-height: 1.2; color: inherit; font-size: 1.35rem;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Make content marketing more accurate.</span></h4>\r\n</li>\r\n</ol>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">As we can see, one of the&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2019/12/24/3-ways-tech-startups-are-using-ai-to-revolutionize-customer-experience/\">advantages of artificial intelligence</a>&nbsp;is that it is helping marketing to oil their strategies &ndash; refining them, making them more effective. And one of those strategies is content marketing.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Nowadays, good content is not just about composition and writing: it is also about making data-driven content. It is essential to create content from the data collected about audiences, to give them personalized content that resonates and is useful to them.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">In this sense, there are already artificial intelligence tools capable of helping marketing teams to make specific content. For example, there are different types of software to create algorithms that detect what content can generate interest, based on previous readings by audiences. What&rsquo;s more, some algorithms can predict the content to determine its potential to generate conversions.</p>\r\n<ol style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" start=\"4\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: inherit; line-height: 1.2; color: inherit; font-size: 1.35rem;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Increase sales with CRM.</span></h4>\r\n</li>\r\n</ol>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">CRM (English customer relationship manager ) are systems designed to optimize the relationship with customers. In general, these systems collect data through different platforms (mail, social networks, telephone) and streamline sales processes using the knowledge they obtain with this information.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Some CRM platforms are already using AI to help SMBs analyze this collected data. In this way, they can propose lead generation activities based on information analysis, and as a result, they can speed up the process of acquiring new customers &mdash; and ultimately, sales.</p>\r\n<ol style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\" start=\"5\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: inherit; line-height: 1.2; color: inherit; font-size: 1.35rem;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Boosting SEO.</span></h4>\r\n</li>\r\n</ol>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">In the Google search engine, there are 67,000 searches per second. An impressive number, I must emphasize.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Searching is one of the most important sources of income for the giant Google, which is determined to improve it more and more. His&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/03/10/is-ai-just-as-biased-as-the-humans-creating-it/\">artificial intelligence assistant</a>, Duplex, uses neural networks to understand and generate natural language. Its Lens program enables image searches. There is constant work at&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2019/09/10/4-ways-to-optimize-your-site-to-rank-on-google-in-2019/\">Google to understand what users are looking for</a>&nbsp;and how to give them better answers.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Consequently, companies will have to pay attention to these changes to satisfy the requirements of the Google search engine. And in this field, artificial intelligence again shows its advantages, combined with SEO.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Some of the&nbsp;<a style=\"box-sizing: border-box; color: #007bff; text-decoration-line: none; background-color: transparent;\" href=\"https://readwrite.com/2020/01/27/how-will-ai-change-the-future-of-seo/\">AI and SEO-focused programs</a>&nbsp;can help analyze and automate site rankings.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">For analytics, examining essential metrics of the operation of the site, analyzing the competition and positioning, or optimizing the site to attract more potential customers.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Regarding automation, many of the SEO tasks are well known but difficult to execute, and this is where AI software oriented to SEO can come into play&mdash;automating the search for keywords, the use of links, the blogging, all tasks that take a considerable amount of runtime &mdash; an effort that can be saved with the use of AI.</p>\r\n<h3 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.5rem; background-color: #ffffff;\"><span style=\"box-sizing: border-box; font-weight: bolder;\">Towards effective AI execution</span></h3>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">AI is not so far from the solutions that an SME requires in its day today. By contrast, the AI implemented in those solutions is not something esoteric or utopian, and there are AI tools that can help solve business problems.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">Remember that the chatbot has some functions that allow effective and accessible use of AI.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">The conversation analysis function is one of them. The feature applies AI to the conversations companies have with their customers. Through text mining, artificial intelligence helps uncover the phrases that dominate those conversations, thereby telling companies what their customers are asking the most.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">AI classifies that information into unigrams (one sentence) and bigrams (two sentences), which precisely detail the topics of the conversations. With this information in hand, companies benefit in various ways:</p>\r\n<ul style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1rem; color: #212529; font-family: proxima-nova; font-size: 16px; background-color: #ffffff;\">\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">They have reliable information on what are the topics of the conversations it is generating.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">They can use that information to make an effective landing page.</li>\r\n<li style=\"box-sizing: border-box; color: #2d2620; font-size: 1.1em; line-height: 1.75em; font-family: omnes-pro; margin-bottom: 0.5em;\">They can configure Google Ads campaigns based on the specific demand of potential customers.</li>\r\n</ul>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">On the other hand, there is a suggested answer function. If the previous function was used to determine what the topics of conversation were (what is most asked by users), the automatic response function suggests answers based on the recognition of the bigrams. AI works from what your clients ask to give suggested answers and thus shorten the cycles of the dialogues.</p>\r\n<h4 style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-family: proxima-nova; line-height: 1.2; color: #212529; font-size: 1.35rem; background-color: #ffffff;\">Conclusion</h4>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">AI can optimize your company&rsquo;s daily work. It is not something far from the reality of your SME, but it is a tool that can make significant contributions.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">If we dwell a little more on the example of the conversations, we can think of it this way: if you have around 100 thousand chats and you see what they ask you the most, you will probably miss a few days of work on it.</p>\r\n<p style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 1.25em; color: #2d2620; line-height: 1.75em; font-family: omnes-pro; font-size: 1.2em; background-color: #ffffff;\">An AI trained for this task can do all of this for you, saving time in the process, as well as resources that you can allocate to what you do best.</p>",
+        "created": "2020-05-28T13:01:10.990Z",
+        "updated": "2020-05-28T13:01:10.990Z",
+        "banner": "/home/edogola/daily_parrot/uploads/blog-posts-banners/time_machine_3-wallpaper-1366x768_TDJACzl.jpg",
+        "author": "5016775a-77c5-4ada-9329-7c94f2f34626",
+        "topic": 37,
+        "active": true,
+        "thumbs_up": 12,
+        "thumbs_down": 0,
+        "tags": []
+    }
+}
+]

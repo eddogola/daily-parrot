@@ -15,11 +15,14 @@
         height:70px
     }
     .card{
-        width: fit-content;
-        height: fit-content;
+        width: 277.986px;
+        height: 225.990px;
+        margin-bottom: 25px;
     }
     .card-body{
         padding: 0px;
+        width: 277.99px;
+        height: 155.99px;
     }
     #topic-link{
         color: black;
@@ -48,7 +51,7 @@
                     <div class="card-title pt-3 pl-3 mb-0">
                         <div class="row">
                             <div class="col-auto">
-                                <h4>{{ topic.name }}</h4>
+                                <h4>{{ topic.name|truncatechars:"12" }}</h4>
                             </div>
                             <div class="col-auto my-auto mr-auto">
                                 {% if topic in user.profile.topics.all %}
@@ -66,7 +69,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        {% thumbnail topic.banner "278x180" as im %}
+                        {% thumbnail topic.banner "278x180" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
                             alt="{{ topic.name }}">
                         {% endthumbnail %}

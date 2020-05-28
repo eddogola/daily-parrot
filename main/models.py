@@ -7,21 +7,45 @@ from uuid import uuid4
 from random import sample
 import os
 
+class TagManager(models.Manager):
+    def get_by_natural_key(self, slug):
+        return self.get(slug=slug)
+
 class Tag(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, max_length=15)
     
+    objects = TagManager()
+    
     def __str__(self):
         return self.name
     
+    def natural_key(self):
+        return (self.slug,)
+    
+class ClassificationManager(models.Manager):
+    
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
+    
 class Classification(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
+    
+    objects = ClassificationManager()
     
     class Meta:
         ordering = ['id']
     
     def __str__(self):
         return self.name
+    
+    def natural_key(self):
+        return (self.name,)
+    
+class TopicManager(models.Manager):
+    
+    def get_by_natural_key(self, slug):
+        return self.get(slug=slug)
 
 class Topic(models.Model):
     name = models.CharField(max_length=50)
@@ -30,6 +54,8 @@ class Topic(models.Model):
     classification = models.ForeignKey(Classification, on_delete=models.PROTECT,
                                        related_name='topics')
     banner = models.ImageField(upload_to='topic-banners', null=True)
+    
+    objects = TopicManager()
     
     def __str__(self):
         return self.name
@@ -40,6 +66,9 @@ class Topic(models.Model):
         #order and limit queryset
         blog_posts = blog_posts.order_by('thumbs_up')[:5]
         return blog_posts
+    
+    def natural_key(self):
+        return (self.slug,)
 
 class Follow(models.Model):
     follower = models.ForeignKey('Profile', related_name='following', on_delete=models.CASCADE)
@@ -48,6 +77,11 @@ class Follow(models.Model):
     
     class Meta:
         unique_together = ['follower', 'following']
+        
+class ProfileManager(models.Manager):
+    
+    def get_by_natural_key(self, username):
+        return self.get(user__username=username)
 
 def avatar_path(instance, filename):
     name, ext = os.path.splitext(filename)
@@ -118,8 +152,14 @@ class Profile(models.Model):
     
     def __str__(self):
         return self.user.email
+    
+    def natural_key(self):
+        return (self.user.username,)
 
 class BlogPostManager(models.Manager):
+    
+    def get_by_natural_key(self, slug):
+        return self.get(slug=slug)
     
     def active(self):
         return self.filter(active=True)
@@ -133,7 +173,7 @@ class BlogPostManager(models.Manager):
 
 class BlogPost(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4(), editable=False)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True, max_length=400)
     title = models.CharField(max_length=400, unique=True)
     tagline = models.CharField(max_length=400, null=True)
     body = models.TextField()
@@ -162,3 +202,6 @@ class BlogPost(models.Model):
                         'username': self.author.user.username,
                         'blog_post_slug': self.slug
                     })
+        
+    def natural_key(self):
+        return (self.slug,)

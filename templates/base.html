@@ -58,6 +58,9 @@
           </li>
         </ul>
       {% else %}
+      <li class="nav-item my-auto mr-4">
+        <a class="nav-link nvl" href="{% url 'topics' %}">topics</a>
+      </li>
         <div class="p-2">
           <a href="{% url 'login' %}" class="btn btn-outline-success">Login</a>
           <a href="{% url 'signup' %}" class="btn btn-secondary">Signup</a>

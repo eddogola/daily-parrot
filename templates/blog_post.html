@@ -207,8 +207,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        {% thumbnail topic.banner "278x180" as im %}
+                    <div class="card-body p-0">
+                        {% thumbnail topic.banner "350x180" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
                             alt="{{ topic.name }}">
                         {% endthumbnail %}

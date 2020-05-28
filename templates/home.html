@@ -66,7 +66,7 @@
                         </div>
                     </a>
                         <div class="col-md-2 ml-auto my-auto">
-                            {% thumbnail blog_post.banner "152x131" crop="center" as im %}
+                            {% thumbnail blog_post.banner "170x159" crop="center" as im %}
                             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                             {% endthumbnail %}
                         </div>
@@ -83,6 +83,7 @@
             {% endif %}
         </div>
         <div class="col-md-2">
+            {% if authors %}
             <h3>top authors</h3>
             {% for author in authors %}
                 <div class="row mb-2">
@@ -102,6 +103,7 @@
                     <hr>
                 </div>
             {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock content %}

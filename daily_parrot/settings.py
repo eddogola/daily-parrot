@@ -148,4 +148,3 @@ TINYMCE_DEFAULT_CONFIG = {
     'plugins':'code,anchor,autosave,emoticons,preview,fullscreen',
 }
 TINYMCE_COMPRESSOR = True
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

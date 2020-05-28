@@ -61,7 +61,6 @@ class BlogPostAdmin(admin.ModelAdmin):
     inlines = (
         BlogPostsTagsInline,
     )
-    form = forms.BlogPostForm
     
     def get_banner(self, obj):
         banner = get_thumbnail(obj.banner, '152x131')
